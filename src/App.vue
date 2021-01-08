@@ -1,0 +1,309 @@
+<template>
+  <div id="app">
+    <nav>
+      <div class="navLeft">
+        <router-link to="/">
+          <img id="LandingPageLogo" src="./assets/img/logo.png" alt="" />
+        </router-link>
+      </div>
+
+      <div class="navRight">
+        <ul>
+          <li v-for="page in pages.slice(0, -1)" :key="page.id" :id="page.id">
+            <router-link :to="`/${page.name}`"> {{ page.name }} </router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- <img class="HeroImages" :src="`./assets/img/${page.url}`" alt="det billede!">  skal fixes -->
+    <!-- <img class="HeroImages" src="./assets/img/AboutHero.png"> -->
+
+    <router-view />
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App",
+
+  computed: {
+    //vue will look for it if there are updates?
+    pages: function () {
+      return this.$store.state.pages;
+    },
+    /*
+    products() {
+      return this.$store.getters.products;
+    }
+    */
+    /*
+    
+    products: function () {
+      return this.$store.state.products;
+    }, */
+    
+  },
+
+  mounted: function () {
+    this.$store.dispatch("load"); // dollor sign means???
+    /* this.imagesLoad(); */
+  },
+};
+</script>
+
+
+<style>
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+ 
+}
+
+#app {
+  box-sizing: border-box;
+  margin: 0 auto;
+  /* height: 100vh; */
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  color: black;
+
+   background-color: #0C0C0C;
+}
+h1, h2, h3, h4, h5, p, a {
+   color: #F5F5F5;
+   text-decoration: none;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0 0 30px;
+}
+h2 {
+  font-size: 28px;
+  margin: 0 0 25px;
+}
+p {
+  font-size: 18px;
+  margin: 0 0 25px;
+}
+
+.p2 {
+  font-size: 10px;
+  margin: 0 0 25px;
+}
+
+.greyP {
+  color: #979797;
+}
+
+a:hover {
+  color: #D03A3B;
+}
+
+a:visited {
+  border: none;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.342);
+  height: 78px;
+  /* padding: 20px 0; */
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+
+nav .navLeft {
+  width: 290px;
+  margin: auto 0 auto 48px;
+}
+nav .navLeft a {
+
+  color: white;
+  cursor: pointer;
+
+  /* border: 1px solid whitesmoke; */
+}
+
+#LandingPageLogo {
+  width: 286px;
+}
+nav ul {
+  
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  
+ width: 100px;
+  margin: 10px;
+
+}
+
+nav .navRight {
+  margin: auto 58px auto auto;
+}
+
+nav .navRight a {
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+nav li a:hover {
+  text-decoration: underline #D03A3B;
+  
+  
+  
+}
+
+.HeroImages-Container {
+  height: 800px;
+  background-color: #0C0C0C;
+}
+.HeroImages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 800px;
+  max-height: 800px;
+  z-index: 1;
+
+  background-color: rgb(31, 31, 31);
+}
+
+.main-container {
+ padding: 0 14.45%;
+
+   display: flex;
+  flex-wrap: wrap;
+}
+
+.main-container .main-left, .main-container .main-right {
+  width: 50%;
+}
+
+.product-container {
+   display: flex;
+  flex-wrap: wrap;
+  /* background-color: DodgerBlue; */
+}
+
+.store-product {
+  /* background-color: #f1f1f1; */
+  width: 380px;
+  margin: 0 auto;
+  padding: 0 5px 0 0;
+  
+}
+
+.product-category {
+  width: 100%;
+}
+
+</style>
+

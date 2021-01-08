@@ -131,8 +131,15 @@ export default {
   
 }
 
+.event-middle {
+  min-width: 150px;
+  text-align: right;
+}
+
 .event-left h2 {
 margin-bottom: 5px;
+min-width: 250px;
+max-width: 250px;
 }
 
 

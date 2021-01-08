@@ -281,6 +281,7 @@ nav li a:hover {
 
    display: flex;
   flex-wrap: wrap;
+  
 }
 
 .main-container .main-left, .main-container .main-right {

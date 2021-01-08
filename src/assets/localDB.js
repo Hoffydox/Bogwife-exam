@@ -86,7 +86,42 @@ export default [
         "id": 3,
         "name": "Events",
         "description": "beskrivelse af en art nummer 3",
-        "url": "EventsHero.jpg"
+        "url": "EventsHero.jpg",
+        "article1": {
+            "id": 1,
+            "country": "Denmark",
+            "city": "Aalborg",
+            "venue": "Studenterhuset",
+            "date": "15/4/2021",
+        },
+        "article2": {
+            "id": 2,
+            "country": "Denmark",
+            "city": "Aalborg",
+            "venue": "1000Fryd",
+            "date": "24/4/2021",
+        },
+        "article3": {
+            "id": 3,
+            "country": "Denmark",
+            "city": "Aarhus",
+            "venue": "TRAIN",
+            "date": "3/5/2021",
+        },
+        "article4": {
+            "id": 4,
+            "country": "Germany",
+            "city": "Berlin",
+            "venue": "Monarch",
+            "date": "13/5/2021",
+        },
+        "article5": {
+            "id": 5,
+            "country": "Germany",
+            "city": "Berlin",
+            "venue": "West Germany",
+            "date": "14/5/2021",
+        },
     },
     {
         "id": 4,

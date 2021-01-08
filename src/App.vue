@@ -25,7 +25,6 @@
 <script>
 export default {
   name: "App",
-
   computed: {
     //vue will look for it if there are updates?
     pages: function () {
@@ -261,7 +260,8 @@ nav li a:hover {
 }
 
 .HeroImages-Container {
-  height: 800px;
+  /* height: 800px; */
+  height: 60vw;
   background-color: #0C0C0C;
 }
 .HeroImages {

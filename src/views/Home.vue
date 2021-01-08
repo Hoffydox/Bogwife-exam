@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <!-- <three-canvas /> Det er nok her der skal være et component som indeholder Intro animationen og alt det ekstra --> 
- <div id="home-hero-container" class="HeroImages-Container">
+ <div  id="home-hero-container" class="HeroImages-Container" :style="{'background-image': 'url('+ require(`../assets/img/` + page.url) +')'}">
       
     </div>
     <section id="home-section">
@@ -24,6 +24,7 @@
 
 export default {
   name: "Home",
+ 
   // components: { threeCanvas },  HUSK AT IMPORTE COMPONENT HER
   computed: {
     page: function () {
@@ -33,6 +34,8 @@ export default {
       }
       return pageObject;
     },
+    
+    
   },
 };
 </script>
@@ -46,10 +49,10 @@ export default {
 #home #home-hero-container {
 
 /* Placeholder for animations viduet */
-height: 100vh;
+/* height: 100vh; nye ændringer */ 
 width: 100vw;
 background-color: #0C0C0C;
-background-image: url("../assets/img/introimg.png");
+ /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;
 background-size: 100vw auto;
 

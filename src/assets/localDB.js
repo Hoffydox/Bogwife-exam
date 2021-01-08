@@ -133,7 +133,7 @@ export default [
         "id": 5,
         "name": "Home",
         "description": "beskrivelse af en art nummer 5",
-        "url": "Introimage.jpg",
+        "url": "introimg.png",
         "article1": {
             "header": "Bogwife",
             "text1": "Inspired by the Danish folklore about a creature that creates a dense and mystical fog, Bogwife creates music that encapsulates its listeners with its songs.",

@@ -1,8 +1,8 @@
 <template>
-  <section id="Events">
+  <section id="events">
     <!-- <h3>{{ fav }}</h3> -->
-    <div class="HeroImages-Container">
-      <img class="HeroImages" :src="require(`@/assets/img/` + page.url)" v-bind:alt="page.name" />
+    <div id="events-hero-container" class="HeroImages-Container" :style="{'background-image': 'url('+ require(`@/assets/img/` + page.url) +')'}">
+      
     </div>
     <div class="main-container">
       <h1>{{ page.name }}</h1>
@@ -117,6 +117,18 @@ export default {
   width: 100%;
 }
 
+#events #events-hero-container {
+
+/* Placeholder for animations viduet */
+
+width: 100vw;
+background-color: #0C0C0C;
+ /* background-image: url("../assets/img/introimg.png"); */
+background-repeat: no-repeat;
+background-size: 100vw auto;
+
+}
+
 .event-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -153,6 +165,13 @@ max-width: 250px;
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+@media screen and (max-width: 590px) {
+  .event-middle {
+  min-width: 150px;
+  text-align: left;
+}
 }
 
 </style>

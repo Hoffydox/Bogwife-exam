@@ -1,7 +1,6 @@
 <template>
-  <section id="Store">
-    <div class="HeroImages-Container">
-      <img class="HeroImages" :src="require(`@/assets/img/` + page.url)" v-bind:alt="page.name" />
+  <section id="store">
+    <div id="store-hero-container" class="HeroImages-Container" :style="{'background-image': 'url('+ require(`@/assets/img/` + page.url) +')'}">
     </div>
     
     <div class="main-container">
@@ -352,6 +351,18 @@ export default {
 </script>
 
 <style scoped>
+
+#store #store-hero-container {
+
+/* Placeholder for animations viduet */
+
+width: 100vw;
+background-color: #0C0C0C;
+ /* background-image: url("../assets/img/introimg.png"); */
+background-repeat: no-repeat;
+background-size: 100vw auto;
+
+}
 
 h1 {
     margin: 0;

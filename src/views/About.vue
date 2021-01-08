@@ -1,7 +1,7 @@
 <template>
-  <section id="About">
-      <div class="HeroImages-Container">
-      <img class="HeroImages" :src="require(`@/assets/img/` + page.url)" v-bind:alt="page.name" />
+  <section id="about">
+      <div id="about-hero-container" class="HeroImages-Container" :style="{'background-image': 'url('+ require(`@/assets/img/` + page.url) +')'}">
+      
     </div>
         <!-- <h3>{{ fav }}</h3> -->
         <div class="main-container">
@@ -73,6 +73,18 @@ computed: {
 </script>
 
 <style scoped>
+
+#about #about-hero-container {
+
+/* Placeholder for animations viduet */
+
+width: 100vw;
+background-color: #0C0C0C;
+ /* background-image: url("../assets/img/introimg.png"); */
+background-repeat: no-repeat;
+background-size: 100vw auto;
+
+}
 .main-container {
     padding-bottom: 150px;
     /* test*/

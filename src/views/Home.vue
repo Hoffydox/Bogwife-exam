@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 
 
 
@@ -56,6 +56,11 @@ background-color: #0C0C0C;
 background-repeat: no-repeat;
 background-size: 100vw auto;
 
+}
+
+#home .HeroImages-Container {
+  height: 60vw;
+  max-height: 100vh;
 }
 
 #home #home-section .home-container {

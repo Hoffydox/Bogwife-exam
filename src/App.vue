@@ -291,12 +291,13 @@ nav li a:hover {
    display: flex;
   flex-wrap: wrap;
   /* background-color: DodgerBlue; */
+   justify-content: space-between;
 }
 
 .store-product {
   /* background-color: #f1f1f1; */
   width: 380px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 5px 0 0;
   
 }

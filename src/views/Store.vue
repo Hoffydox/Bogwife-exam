@@ -565,7 +565,7 @@ display: flex;
 }
 
 .product-category h2 {
-    margin: 30 0 0 0;
+    margin: 30px 0 0 0;
 }
 .artist-link {
     font-size: 18px;

@@ -353,6 +353,10 @@ export default {
 
 <style scoped>
 
+h1 {
+    margin: 0;
+}
+
 .cart {
     
     position: fixed;
@@ -560,6 +564,9 @@ display: flex;
     font-size: 18px;
 }
 
+.product-category h2 {
+    margin: 30 0 0 0;
+}
 .artist-link {
     font-size: 18px;
     display: inline-block;

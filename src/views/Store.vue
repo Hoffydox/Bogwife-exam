@@ -63,7 +63,7 @@
 
         <div class="product-container">
             <div class="product-category">
-                <h2 >{{ page.article1.header }}</h2>
+                <h2 >{{ page.article1}}</h2>
             </div>
 
             <div class="store-product" v-for="product in page.products" :key="product.id" :id="product.id" >
@@ -110,7 +110,7 @@
                 </form>
 
             </div>
-
+<!-- Gamle store som backup -->
            <!--
             <div class="store-product">
                 <img class="storePic" :src="require(`@/assets/img/` + page.article1.product1.pic)" v-bind:alt="page.name" />
@@ -337,24 +337,6 @@
     </div>
     
 
-
-
-<!-- den skal ind i app.vue?
-<Product
-      v-for="product  in  products"
-      :key="product.id"
-      :id="product.id"
-      :pic="product.pic"
-      :title="product.title"
-      :description="product.description"
-      :artwork="product.artwork"
-      :artLink="product.artLink"
-      :price="product.price"
-      :shipping="product.shipping"
-    />
-    
- -->
-
   </section>
 </template>
 
@@ -364,6 +346,7 @@ export default {
   name: "Store",
   data() {
       return {
+          /* Hvad skal jeg gøre her gery???? */
           count: 1,
           count2: 1,
           count3: 1,

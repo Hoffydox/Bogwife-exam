@@ -4,6 +4,18 @@ export default [
         "name": "Store",
         "description": "beskrivelse af en art nummer 1",
         "url": "StoreHero.png",
+        "article1": "Apparel",
+        "article2": "Music",
+        "sections": [
+            {
+                "id": 1,
+                "category": "Apparel",
+            },
+            {
+                "id": 2,
+                "category": "Music",
+            },
+        ],
         "products": [
             {
                 "id": 1,
@@ -57,57 +69,7 @@ export default [
                 "shipping": "Ships within 15 days"
             },
         ],
-        "article1": {
-            "header": "Apparel",
-            "product1": {
-                "pic": "rising.jpg",
-                "title": "Bogwife Rising T-shirt",
-                "description": "Bogwife artwork printed on Gildan Premium Cotton T-shirts.",
-                "artwork": "Artwork: grace_xiii (instagram).",
-                "price": "20 €",
-                "shipping": "Ships within 10 days"
-            },
-            "product2": {
-                "pic": "skeleton.jpg",
-                "title": "Bogwife Skeleton T-shirt",
-                "description": "Bogwife Skeleton artwork printed on Gildan Heavy Cotton T-Shirts.",
-                "artwork": "Artwork: steven_yoyada (instagram).",
-                "price": "20 €",
-                "shipping": "Ships within 10 days"
-            },
-            "product3": {
-                "pic": "bodies.jpg",
-                "title": "Bogwife Bodies T-shirt",
-                "description": "Bog bodies artwork printed on Gildan Premium Cotton T-shirts. ",
-                "artwork": "Artwork: apocalypticnuke_ (instagram).",
-                "price": "20 €",
-                "shipping": "Ships within 10 days"
-            },
-        },
-        "article2": {
-            "header": "Music",
-            "product1": {
-                "pic": "vinylGreen.jpg",
-                "title": "Halls of Rebirth Green Vinyl",
-                "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
-                "price": "20 €",
-                "shipping": "Ships within 15 days"
-            },
-            "product2": {
-                "pic": "vinylRed.jpg",
-                "title": "Halls of Rebirth Red Vinyl",
-                "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
-                "price": "20 €",
-                "shipping": "Ships within 15 days"
-            },
-            "product3": {
-                "pic": "cassette.jpg",
-                "title": "Halls of Rebirth Cassette",
-                "description": "Casette produced by Olde Magick Records. Limited to 20 copies.",
-                "price": "20 €",
-                "shipping": "Ships within 15 days"
-            }
-        },
+       
     },
     {
         "id": 2,
@@ -205,27 +167,22 @@ export default [
                 "id": 2,
                 "name": "Guidance",
                 "duration": "6:15",
-            }
-            ,
+            },
             {
                 "id": 3,
                 "name": "Seer",
                 "duration": "6:05",
-            }
-            ,
+            },
             {
                 "id": 4,
                 "name": "Orbit",
                 "duration": "11:54",
-            }
-            ,
+            },
             {
                 "id": 5,
                 "name": "Abyss",
                 "duration": "6:34",
             }
-        ]
-            
-        
+        ]        
     },
 ]

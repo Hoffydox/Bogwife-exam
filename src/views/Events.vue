@@ -6,90 +6,25 @@
     </div>
     <div class="main-container">
       <h1>{{ page.name }}</h1>
-      <div id="events">
+      <div id="events" >
         <!-- One Single Event -->
-          <div class="event-wrapper">
+          <div class="event-wrapper" v-for="event in page.events" :key="event.id" :id="event.id">
           <div class="event-left">
             <h2>
-              {{ page.article1.country }}, {{ page.article1.city }}
+              {{ event.country }}, {{ event.city }}
             </h2>
-              <p>{{ page.article1.venue }}</p>
+              <p>{{ event.venue }}</p>
           </div>
           <div class="event-middle">
-            <h2>{{ page.article1.date }}</h2>
+            <h2>{{ event.date }}</h2>
           </div>
           <div class="event-right" >
-            <button class="ticketBtn" >BUY TICKETS</button>
+            <button class="ticketBtn" :id="`buy` + event.id" >BUY TICKETS</button>
           </div>
         </div>
-        <!-- One Single Event -->
-        <div class="event-wrapper">
-          <div class="event-left">
-            <h2>
-              {{ page.article2.country }}, {{ page.article2.city }}
-            </h2>
-              <p>{{ page.article2.venue }}</p>
-          </div>
-          <div class="event-middle">
-            <h2>{{ page.article2.date }}</h2>
-          </div>
-          <div class="event-right" >
-            <button class="ticketBtn" >BUY TICKETS</button>
-          </div>
-        </div>
-        <!-- One Single Event -->
-        <div class="event-wrapper">
-          <div class="event-left">
-            <h2>
-              {{ page.article3.country }}, {{ page.article3.city }}
-            </h2>
-              <p>{{ page.article3.venue }}</p>
-          </div>
-          <div class="event-middle">
-            <h2>{{ page.article3.date }}</h2>
-          </div>
-          <div class="event-right" >
-            <button class="ticketBtn" >BUY TICKETS</button>
-          </div>
-        </div>
-        <!-- One Single Event -->
-        <div class="event-wrapper">
-          <div class="event-left">
-            <h2>
-              {{ page.article4.country }}, {{ page.article4.city }}
-            </h2>
-              <p>{{ page.article4.venue }}</p>
-          </div>
-          <div class="event-middle">
-            <h2>{{ page.article4.date }}</h2>
-          </div>
-          <div class="event-right" >
-            <button class="ticketBtn" >BUY TICKETS</button>
-          </div>
-        </div>
-        <!-- One Single Event -->
-        <div class="event-wrapper">
-          <div class="event-left">
-            <h2>
-              {{ page.article5.country }}, {{ page.article5.city }}
-            </h2>
-              <p>{{ page.article5.venue }}</p>
-          </div>
-          <div class="event-middle">
-            <h2>{{ page.article5.date }}</h2>
-          </div>
-          <div class="event-right" >
-            <button class="ticketBtn" >BUY TICKETS</button>
-          </div>
-        </div>
-        
-        
+    
       </div>
        
-        
-
-
-
       
     </div>
   </section>

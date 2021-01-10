@@ -177,6 +177,11 @@ h2 {
   font-size: 28px;
   margin: 0 0 25px;
 }
+
+strong {
+  font-size: 22px;
+}
+
 p {
   font-size: 18px;
   margin: 0 0 25px;
@@ -306,6 +311,17 @@ nav li a:hover {
 
 .product-category {
   width: 100%;
+}
+
+.buyBtn {
+    border: 2px solid #D03A3B;
+    border-radius: 7px;
+    width: 146px;
+    height: 45px;
+    margin: 0 0 30px;
+    background-color: #0C0C0C;
+    color: #f5f5f5;
+    font-size: 18px;
 }
 
 </style>

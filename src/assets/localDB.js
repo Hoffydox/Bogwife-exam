@@ -4,6 +4,59 @@ export default [
         "name": "Store",
         "description": "beskrivelse af en art nummer 1",
         "url": "StoreHero.png",
+        "products": [
+            {
+                "id": 1,
+                "pic": "rising.jpg",
+                "title": "Bogwife Rising T-shirt",
+                "description": "Bogwife artwork printed on Gildan Premium Cotton T-shirts.",
+                "artwork": "Artwork: grace_xiii (instagram).",
+                "price": "20 €",
+                "shipping": "Ships within 10 days"
+            },
+            {
+                "id": 2,
+                "pic": "skeleton.jpg",
+                "title": "Bogwife Skeleton T-shirt",
+                "description": "Bogwife Skeleton artwork printed on Gildan Heavy Cotton T-Shirts.",
+                "artwork": "Artwork: steven_yoyada (instagram).",
+                "price": "20 €",
+                "shipping": "Ships within 10 days"
+            },
+            {
+                "id": 3,
+                "pic": "bodies.jpg",
+                "title": "Bogwife Bodies T-shirt",
+                "description": "Bog bodies artwork printed on Gildan Premium Cotton T-shirts. ",
+                "artwork": "Artwork: apocalypticnuke_ (instagram).",
+                "price": "20 €",
+                "shipping": "Ships within 10 days"
+            },
+            {
+                "id": 4,
+                "pic": "vinylGreen.jpg",
+                "title": "Halls of Rebirth Green Vinyl",
+                "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
+                "price": "20 €",
+                "shipping": "Ships within 15 days"
+            },
+            {
+                "id": 5,
+                "pic": "vinylRed.jpg",
+                "title": "Halls of Rebirth Red Vinyl",
+                "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
+                "price": "20 €",
+                "shipping": "Ships within 15 days"
+            },
+            {
+                "id": 6,
+                "pic": "cassette.jpg",
+                "title": "Halls of Rebirth Cassette",
+                "description": "Casette produced by Olde Magick Records. Limited to 20 copies.",
+                "price": "20 €",
+                "shipping": "Ships within 15 days"
+            },
+        ],
         "article1": {
             "header": "Apparel",
             "product1": {
@@ -87,41 +140,44 @@ export default [
         "name": "Events",
         "description": "beskrivelse af en art nummer 3",
         "url": "EventsHero.jpg",
-        "article1": {
-            "id": 1,
-            "country": "Denmark",
-            "city": "Aalborg",
-            "venue": "Studenterhuset",
-            "date": "15/4/2021",
-        },
-        "article2": {
-            "id": 2,
-            "country": "Denmark",
-            "city": "Aalborg",
-            "venue": "1000Fryd",
-            "date": "24/4/2021",
-        },
-        "article3": {
-            "id": 3,
-            "country": "Denmark",
-            "city": "Aarhus",
-            "venue": "TRAIN",
-            "date": "3/5/2021",
-        },
-        "article4": {
-            "id": 4,
-            "country": "Germany",
-            "city": "Berlin",
-            "venue": "Monarch",
-            "date": "13/5/2021",
-        },
-        "article5": {
-            "id": 5,
-            "country": "Germany",
-            "city": "Berlin",
-            "venue": "West Germany",
-            "date": "14/5/2021",
-        },
+        "events": [
+            {
+                "id": 1,
+                "country": "Denmark",
+                "city": "Aalborg",
+                "venue": "Studenterhuset",
+                "date": "15/4/2021",
+            },
+            {
+                "id": 2,
+                "country": "Denmark",
+                "city": "Aalborg",
+                "venue": "1000Fryd",
+                "date": "24/4/2021",
+            },
+            {
+                "id": 3,
+                "country": "Denmark",
+                "city": "Aarhus",
+                "venue": "TRAIN",
+                "date": "3/5/2021",
+            },
+            {
+                "id": 4,
+                "country": "Germany",
+                "city": "Berlin",
+                "venue": "Monarch",
+                "date": "13/5/2021",
+            },
+            {
+                "id": 5,
+                "country": "Germany",
+                "city": "Berlin",
+                "venue": "West Germany",
+                "date": "14/5/2021",
+            },
+        ],
+       
     },
     {
         "id": 4,
@@ -138,6 +194,38 @@ export default [
             "header": "Bogwife",
             "text1": "Inspired by the Danish folklore about a creature that creates a dense and mystical fog, Bogwife creates music that encapsulates its listeners with its songs.",
             "text2": "Bogwife is a four-piece stoner rock band with roots in doom and psychedelic rock music."
-        }
+        },
+        "tracks": [
+            {
+                "id": 1,
+                "name": "Voidcruiser",
+                "duration": "6:39",
+            },
+            {
+                "id": 2,
+                "name": "Guidance",
+                "duration": "6:15",
+            }
+            ,
+            {
+                "id": 3,
+                "name": "Seer",
+                "duration": "6:05",
+            }
+            ,
+            {
+                "id": 4,
+                "name": "Orbit",
+                "duration": "11:54",
+            }
+            ,
+            {
+                "id": 5,
+                "name": "Abyss",
+                "duration": "6:34",
+            }
+        ]
+            
+        
     },
 ]

@@ -65,6 +65,53 @@
             <div class="product-category">
                 <h2 >{{ page.article1.header }}</h2>
             </div>
+
+            <div class="store-product" v-for="product in page.products" :key="product.id" :id="product.id" >
+                <img class="storePic" :src="require(`@/assets/img/` + product.pic)" v-bind:alt="product.name" />
+                <h2>{{ product.title }}</h2>
+                <p class="noMargin">{{ product.description }}</p>
+                <a class="artist-link" href="https://www.instagram.com/grace_xiii/?hl=da" target="_blank">{{ product.artwork }}</a>
+                <h2>{{ product.price }}</h2>
+                <p class="greyP">{{ product.shipping }}</p>
+                <form class="options-container">
+                    <div class="sizes">
+                        <div class="size">
+                            <input type="radio" :id="`small` + product.id" :name="`sizes` + product.id" :value="`small` + product.id">
+                            <label :for="`small` + product.id">S</label>
+                        </div>
+                        <div class="size">
+                            <input type="radio" :id="`medium` + product.id" :name="`sizes` + product.id" :value="`medium` + product.id">
+                            <label :for="`medium` + product.id">M</label>
+                        </div>
+                        <div class="size">
+                            <input type="radio" :id="`large` + product.id" :name="`sizes` + product.id" :value="`large` + product.id">
+                            <label :for="`large` + product.id">L</label>
+                        </div>
+                        <div class="size">
+                            <input type="radio" :id="`x-large` + product.id" :name="`sizes` + product.id" :value="`x-large` + product.id">
+                            <label :for="`x-large` + product.id">XL</label>
+                        </div>
+                        <div class="quanitityArea">
+                            <p class="greyP">
+                                Quanitity: 
+                            </p>
+                            <div class="quantityBtn">
+                                <div class="left"><p class="counter"> {{ count }} </p></div>
+                                <div class="right">
+                                    <button class="quantityUp" v-on:click="count++" type="button"><font-awesome-icon icon="caret-up" /></button>
+                                    <button class="quantityDown" v-on:click="count--" type="button"><font-awesome-icon icon="caret-down" /></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buyBtn" type="button">
+                        Buy
+                    </button>
+                </form>
+
+            </div>
+
+           <!--
             <div class="store-product">
                 <img class="storePic" :src="require(`@/assets/img/` + page.article1.product1.pic)" v-bind:alt="page.name" />
                 <h2>{{ page.article1.product1.title }}</h2>
@@ -285,6 +332,7 @@
 
                 </form>
             </div>
+             -->
         </div>
     </div>
     
@@ -564,16 +612,7 @@ display: flex;
     padding: 0 10px;
 }
 
-.buyBtn {
-    border: 2px solid #D03A3B;
-    border-radius: 7px;
-    width: 146px;
-    height: 45px;
-    margin: 0 0 30px;
-    background-color: #0C0C0C;
-    color: #f5f5f5;
-    font-size: 18px;
-}
+
 
 .product-category h2 {
     margin: 30px 0 0 0;

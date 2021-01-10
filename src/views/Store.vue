@@ -74,7 +74,7 @@
                 <h2>{{ product.price }}</h2>
                 <p class="greyP">{{ product.shipping }}</p>
                 <form class="options-container">
-                    <div class="sizes">
+                    <div class="sizes"> <!-- 4 -6 produkt skal ikke have dette element.-->
                         <div class="size">
                             <input type="radio" :id="`small` + product.id" :name="`sizes` + product.id" :value="`small` + product.id">
                             <label :for="`small` + product.id">S</label>

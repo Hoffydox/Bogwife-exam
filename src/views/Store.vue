@@ -29,7 +29,7 @@
                     </div>
                     <div class="middleCart">
                         <div class="cartProductInfo">
-                            <p class="fullWidth">{{ page.article1.product1.title }}</p>
+                            <p class="fullWidth">Hardcode</p>
                             <p>Size: M</p>
                             <p>Quantity: {{ count }}</p> 
                             <div class="quantityBtn">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <p >Send as gift:</p> <input type="checkbox">
-                            <p class="fullWidth">price: {{ page.article1.product1.price }}</p>
+                            <p class="fullWidth">price: Hardcode</p>
                         </div>
                     
                     </div>
@@ -51,7 +51,7 @@
                 <div class="leftCart"></div>
                 <div class="middleCart">
                     <p class="noMargin">Total</p>
-                    <h2>{{ page.article1.product1.price }}</h2>
+                    <h2>Hardcode</h2>
                 </div>
                 <div class="rightCart"></div>
                 <button class="checkOutBtn">Check out</button>

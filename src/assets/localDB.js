@@ -6,16 +6,6 @@ export default [
         "url": "StoreHero.png",
         "article1": "Apparel",
         "article2": "Music",
-        "sections": [
-            {
-                "id": 1,
-                "category": "Apparel",
-            },
-            {
-                "id": 2,
-                "category": "Music",
-            },
-        ],
         "products": [
             {
                 "id": 1,
@@ -24,7 +14,35 @@ export default [
                 "description": "Bogwife artwork printed on Gildan Premium Cotton T-shirts.",
                 "artwork": "Artwork: grace_xiii (instagram).",
                 "price": "20 €",
-                "shipping": "Ships within 10 days"
+                "shipping": "Ships within 10 days",
+                "category": "AP",
+                "sizes": [
+                    {
+                        "available": false,
+                        "unit": "XS",
+                        "name": "X-Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "S",
+                        "name": "Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "M",
+                        "name": "Medium",
+                    },
+                    {
+                        "available": true,
+                        "unit": "L",
+                        "name": "Large",
+                    },
+                    {
+                        "available": true,
+                        "unit": "XL",
+                        "name": "X-Large",
+                    }
+                ],
             },
             {
                 "id": 2,
@@ -33,7 +51,36 @@ export default [
                 "description": "Bogwife Skeleton artwork printed on Gildan Heavy Cotton T-Shirts.",
                 "artwork": "Artwork: steven_yoyada (instagram).",
                 "price": "20 €",
-                "shipping": "Ships within 10 days"
+                "shipping": "Ships within 10 days",
+                "category": "AP",
+                "sizes": [
+                    {
+                        "available": true,
+                        "unit": "XS",
+                        "name": "X-Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "S",
+                        "name": "Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "M",
+                        "name": "Medium",
+                    },
+                    {
+                        "available": true,
+                        "unit": "L",
+                        "name": "Large",
+                    },
+                    {
+                        "available": false,
+                        "unit": "XL",
+                        "name": "X-Large",
+                    }
+                    
+                ],
             },
             {
                 "id": 3,
@@ -42,7 +89,35 @@ export default [
                 "description": "Bog bodies artwork printed on Gildan Premium Cotton T-shirts. ",
                 "artwork": "Artwork: apocalypticnuke_ (instagram).",
                 "price": "20 €",
-                "shipping": "Ships within 10 days"
+                "shipping": "Ships within 10 days",
+                "category": "AP",
+                "sizes": [
+                    {
+                        "available": false,
+                        "unit": "XS",
+                        "name": "X-Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "S",
+                        "name": "Small",
+                    },
+                    {
+                        "available": true,
+                        "unit": "M",
+                        "name": "Medium",
+                    },
+                    {
+                        "available": true,
+                        "unit": "L",
+                        "name": "Large",
+                    },
+                    {
+                        "available": true,
+                        "unit": "XL",
+                        "name": "X-Large",
+                    }
+                ],
             },
             {
                 "id": 4,
@@ -50,7 +125,8 @@ export default [
                 "title": "Halls of Rebirth Green Vinyl",
                 "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
                 "price": "20 €",
-                "shipping": "Ships within 15 days"
+                "shipping": "Ships within 15 days",
+                "category": "MU",
             },
             {
                 "id": 5,
@@ -58,7 +134,8 @@ export default [
                 "title": "Halls of Rebirth Red Vinyl",
                 "description": "180g vinyl for Halls of Rebirth. Includes lyric sheet. Limited to 150x of each color.",
                 "price": "20 €",
-                "shipping": "Ships within 15 days"
+                "shipping": "Ships within 15 days",
+                "category": "MU",
             },
             {
                 "id": 6,
@@ -66,7 +143,8 @@ export default [
                 "title": "Halls of Rebirth Cassette",
                 "description": "Casette produced by Olde Magick Records. Limited to 20 copies.",
                 "price": "20 €",
-                "shipping": "Ships within 15 days"
+                "shipping": "Ships within 15 days",
+                "category": "MU",
             },
         ],
        

@@ -24,7 +24,7 @@ new Vue({
 }).$mount('#app')
 
 
-/* 
+/*
 caret-up
 caret-down
 shopping-cart

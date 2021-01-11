@@ -65,274 +65,15 @@
             <div class="product-category">
                 <h2 >{{ page.article1}}</h2>
             </div>
+            
+        <product v-for="product in apparels" :key="product.id" :productProp="product"/>
+        <div class="product-category"> 
+            <h2>{{ page.article2}}</h2>
+        </div>
+        <product v-for="product in musics" :key="product.id" :productProp="product"/>
+          
 
-            <div class="store-product" v-for="product in page.products" :key="product.id" :id="product.id" >
-                <img class="storePic" :src="require(`@/assets/img/` + product.pic)" v-bind:alt="product.name" />
-                <h2>{{ product.title }}</h2>
-                <p class="noMargin">{{ product.description }}</p>
-                <a class="artist-link" href="https://www.instagram.com/grace_xiii/?hl=da" target="_blank">{{ product.artwork }}</a>
-                <h2>{{ product.price }}</h2>
-                <p class="greyP">{{ product.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes"> <!-- 4 -6 produkt skal ikke have dette element.-->
-                        <div class="size">
-                            <input type="radio" :id="`small` + product.id" :name="`sizes` + product.id" :value="`small` + product.id">
-                            <label :for="`small` + product.id">S</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" :id="`medium` + product.id" :name="`sizes` + product.id" :value="`medium` + product.id">
-                            <label :for="`medium` + product.id">M</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" :id="`large` + product.id" :name="`sizes` + product.id" :value="`large` + product.id">
-                            <label :for="`large` + product.id">L</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" :id="`x-large` + product.id" :name="`sizes` + product.id" :value="`x-large` + product.id">
-                            <label :for="`x-large` + product.id">XL</label>
-                        </div>
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-                </form>
-
-            </div>
-<!-- Gamle store som backup -->
-           <!--
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article1.product1.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article1.product1.title }}</h2>
-                <p class="noMargin">{{ page.article1.product1.description }}</p>
-                <a class="artist-link" href="https://www.instagram.com/grace_xiii/?hl=da" target="_blank">{{ page.article1.product1.artwork }}</a>
-                <h2>{{ page.article1.product1.price }}</h2>
-                <p class="greyP">{{ page.article1.product1.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="size">
-                            <input type="radio" id="small" name="sizes" value="small">
-                            <label for="small">S</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="medium" name="sizes" value="medium">
-                            <label for="medium">M</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="large" name="sizes" value="large">
-                            <label for="large">L</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="x-large" name="sizes" value="x-large">
-                            <label for="x-large">XL</label>
-                        </div>
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-
-            </div>
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article1.product2.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article1.product2.title }}</h2>
-                <p class="noMargin">{{ page.article1.product2.description }}</p>
-                <a class="artist-link" href="https://www.instagram.com/steven_yoyada/?hl=da" target="_blank">{{ page.article1.product2.artwork }}</a>
-                <h2>{{ page.article1.product2.price }}</h2>
-                <p class="greyP">{{ page.article1.product2.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="size">
-                            <input type="radio" id="small2" name="sizes2" value="small2">
-                            <label for="small2">S</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="medium2" name="sizes2" value="medium2">
-                            <label for="medium2">M</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="large2" name="sizes2" value="large2">
-                            <label for="large2">L</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="x-large2" name="sizes2" value="x-large2">
-                            <label for="x-large2">XL</label>
-                        </div>
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count2 }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count2++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count2--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-                
-
-            </div>
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article1.product3.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article1.product3.title }}</h2>
-                <p class="noMargin">{{ page.article1.product3.description }}</p>
-                <a class="artist-link" href="https://www.instagram.com/apocalypticnuke_/?hl=da" target="_blank">{{ page.article1.product3.artwork }}</a>
-                <h2>{{ page.article1.product3.price }}</h2>
-                <p class="greyP">{{ page.article1.product3.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="size">
-                            <input type="radio" id="small3" name="sizes3" value="small3">
-                            <label for="small3">S</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="medium3" name="sizes3" value="medium3">
-                            <label for="medium3">M</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="large3" name="sizes3" value="large3">
-                            <label for="large3">L</label>
-                        </div>
-                        <div class="size">
-                            <input type="radio" id="x-large3" name="sizes3" value="x-large3">
-                            <label for="x-large3">XL</label>
-                        </div>
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count3 }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count3++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count3--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-
-            </div>
-            <div class="product-category">
-                <h2>{{ page.article2.header }}</h2>
-            </div>
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article2.product1.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article2.product1.title }}</h2>
-                <p>{{ page.article2.product1.description }}</p>
-                <h2>{{ page.article2.product1.price }}</h2>
-                <p class="greyP">{{ page.article2.product1.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count4 }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count4++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count4--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-            </div>
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article2.product2.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article2.product2.title }}</h2>
-                <p>{{ page.article2.product2.description }}</p>
-                <h2>{{ page.article2.product2.price }}</h2>
-                <p class="greyP">{{ page.article2.product2.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count5 }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count5++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count5--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-            </div>
-            <div class="store-product">
-                <img class="storePic" :src="require(`@/assets/img/` + page.article2.product3.pic)" v-bind:alt="page.name" />
-                <h2>{{ page.article2.product3.title }}</h2>
-                <p>{{ page.article2.product3.description }}</p>
-                <h2>{{ page.article2.product3.price }}</h2>
-                <p class="greyP">{{ page.article2.product3.shipping }}</p>
-                <form class="options-container">
-                    <div class="sizes">
-                        <div class="quanitityArea">
-                            <p class="greyP">
-                                Quanitity: 
-                            </p>
-                            <div class="quantityBtn">
-                                <div class="left"><p class="counter"> {{ count6 }} </p></div>
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count6++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count6--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="buyBtn" type="button">
-                        Buy
-                    </button>
-
-                </form>
-            </div>
-             -->
+          
         </div>
     </div>
     
@@ -342,17 +83,13 @@
 
 <script>
  // import Product from "../components/productList.vue";
+ import product from "../components/product.vue";
 export default {
   name: "Store",
   data() {
       return {
           /* Hvad skal jeg gøre her gery???? */
           count: 1,
-          count2: 1,
-          count3: 1,
-          count4: 1,
-          count5: 1,
-          count6: 1,
           cart: false,
       }
   },
@@ -367,8 +104,15 @@ export default {
       if (!pageObject) {
         this.$router.replace("/page-not-found");
       }
+      console.log(pageObject);
       return pageObject;
-    }
+    },
+    apparels: function() {
+        return this.page.products.filter(prod => prod.category == "AP")
+    },
+    musics: function() {
+        return this.page.products.filter(prod => prod.category == "MU")
+    },
     /*
     showCart: function () {
           return alert("hello?");
@@ -376,7 +120,7 @@ export default {
       */
   },
   components: {
-  //  Product,
+  product,
   }
 };
 </script>
@@ -499,6 +243,8 @@ h1 {
 
 }
 
+
+
 .sizes {
     display: flex;
     flex-wrap: wrap;
@@ -582,6 +328,11 @@ display: flex;
     padding-bottom: 2px;
 }
 
+.product-container .store-product form.options-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .noMargin {
     margin: 0;
 }
@@ -598,7 +349,7 @@ display: flex;
 
 
 .product-category h2 {
-    margin: 30px 0 0 0;
+    margin: 30px 0;
 }
 .artist-link {
     font-size: 18px;

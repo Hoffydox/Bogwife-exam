@@ -267,7 +267,7 @@ nav li a:hover {
 .HeroImages-Container {
   /* height: 800px; */
   height: 60vw;
-  max-height: 800px;
+  max-height: 80vh;
   background-color: #0C0C0C;
 }
 .HeroImages {

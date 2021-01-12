@@ -11,7 +11,6 @@ Vue.use(Vuex);
 // toys = pages
 // toy = page
 import localData from '../assets/localDB.js'
-import productData from '../assets/productDB.js'
 
 export default new Vuex.Store({
     // stores variable that you want to keep accessible and trackable globally in the projekt
@@ -29,7 +28,9 @@ export default new Vuex.Store({
         getPageByName: (state) => (name) => {
             return state.pages.find(page => page.name == name);
         },
-        StoreCart: (state) => state.cart,
+        getCartItemByCartId: (state) => (cartId) => {
+            return state.cart.find(cartItem => cartItem.cartId == cartId)
+        }
     },
     // changes/manipulations in state has to be trough mutations!
     // mutations directly manipulate the state variables, 
@@ -42,15 +43,19 @@ export default new Vuex.Store({
             state.products = productsApiData;
         },
 
-        pushItem(state, id) { 
-            // check if the same product already exists in state.cart
-            state.cart.push(id);
-            console.log(state.cart)
+        pushItem(state, cartItem) { 
+            state.cart.push(cartItem);
+            
         },
 
         omitItem(state, index) {
             state.cart.splice(index, 1);
         },
+
+        increaseItemQuantity(state, [cartId, quantity]){
+            let cartIndex = state.cart.findIndex(cartItem => cartItem.cartId == cartId);
+            state.cart[cartIndex].quantity += quantity;
+        }
 
     },
     // these change the state, but not directly. why not do this from mutations? because actions can be asyncronous
@@ -59,14 +64,21 @@ export default new Vuex.Store({
         load: (context) => {
             // Local API call
             const apiData = localData;
-            const apiDataProducts = productData;
             context.commit('setPages', apiData);
-            context.commit('setProducts', apiDataProducts);
         },
-        addToCart(context, id) {
-            console.log("action addToCart")
-            context.commit("pushItem", id);
+        addToCart(context, cartItem) {
+            let tempCartItem = context.getters.getCartItemByCartId(cartItem.cartId);
+            // check if exists
+            if (tempCartItem) {
+                // ++ quantaty
+                context.commit("increaseItemQuantity", [cartItem.cartId, cartItem.quantity]);
+            } else {
+                console.log("action addToCart")
+                context.commit("pushItem", cartItem);
+            }
+            console.log(context.state.cart);
           },
+         
       
           removeItem(context, index) {
             context.commit("omitItem", index);

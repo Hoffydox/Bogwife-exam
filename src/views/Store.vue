@@ -6,60 +6,7 @@
     <div class="main-container">
 
         <h1>{{ page.name }}</h1>
-        <div class="cart" >
-        <div class="cart-wrapper">
-            <font-awesome-icon icon="shopping-cart" class="cart-icon" v-on:click="toggleCart"  />
-            <div v-if="cart" class="cartFull">
-                <div class="headerCart">
-                    <div class="leftCart">
-                    <font-awesome-icon icon="shopping-cart" class="cart-icon" v-on:click="toggleCart"  />
-
-                    </div>
-                    <div class="middleCart">
-                        <h2> Shopping Cart </h2>
-                    </div>
-                    <div class="rightCart">
-                        <font-awesome-icon icon="times" class="times" v-on:click="toggleCart" />
-                    </div>
-                </div>
-                <div class="addedToCart">
-                    <div class="leftCart">
-                    <p>1</p>
-
-                    </div>
-                    <div class="middleCart">
-                        <div class="cartProductInfo">
-                            <p class="fullWidth">Hardcode</p>
-                            <p>Size: M</p>
-                            <p>Quantity: {{ count }}</p> 
-                            <div class="quantityBtn">
-                                <div class="right">
-                                    <button class="quantityUp" v-on:click="count++" type="button"><font-awesome-icon icon="caret-up" /></button>
-                                    <button class="quantityDown" v-on:click="count--" type="button"><font-awesome-icon icon="caret-down" /></button>
-                                </div>
-                            </div>
-                            <p >Send as gift:</p> <input type="checkbox">
-                            <p class="fullWidth">price: Hardcode</p>
-                        </div>
-                    
-                    </div>
-                    <div class="rightCart">
-                        <p>REMOVE</p>
-                    </div>
-                </div>
-            <div class="cartBtnArea">
-                <div class="leftCart"></div>
-                <div class="middleCart">
-                    <p class="noMargin">Total</p>
-                    <h2>Hardcode</h2>
-                </div>
-                <div class="rightCart"></div>
-                <button class="checkOutBtn">Check out</button>
-            </div>
-           </div>
-        </div>
-    
-        </div>
+        <cartComponent/>
 
         <div class="product-container">
             <div class="product-category">
@@ -84,20 +31,17 @@
 <script>
  // import Product from "../components/productList.vue";
  import product from "../components/product.vue";
+ import cartComponent from "../components/cart.vue";
 export default {
   name: "Store",
   data() {
       return {
           /* Hvad skal jeg gøre her gery???? */
           count: 1,
-          cart: false,
+          
       }
   },
-    methods: {
-        toggleCart: function () {
-            this.cart = !this.cart;
-        }
-    },
+    
   computed: {
     page: function () {
       const pageObject = this.$store.getters.getPageByName(this.$route.name);
@@ -107,6 +51,7 @@ export default {
       console.log(pageObject);
       return pageObject;
     },
+    
     apparels: function() {
         return this.page.products.filter(prod => prod.category == "AP")
     },
@@ -121,6 +66,7 @@ export default {
   },
   components: {
   product,
+  cartComponent,
   }
 };
 </script>
@@ -143,93 +89,7 @@ h1 {
     margin: 0;
 }
 
-.cart {
-    
-    position: fixed;
-    right: 46px;
-    top: 75px;
-    z-index: 3;
-    
-}
 
-
-
-.cart .cart-icon, .times {
-    color: #f5f5f5;
-    font-size: 41px;
-
-}
-
-.cartFull {
-    border: 1px solid white;
-    padding: 10px;
-    width: 479px;
-    
-    max-height: 88vh;
-    overflow: auto;
-    position: relative;
-    top: -52px;
-    z-index: 4;
-    background-color: #0C0C0C;
- 
- 
-    
-    
-    
-}
-
-.headerCart {
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-
-.addedToCart {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 30px;
-}
-
-
-.leftCart {
-    width: 72px;
-    
-}
-.middleCart {
-    width: 285px;
-    
-}
-.rightCart {
-    width: 120px;
-    
-}
-
-.cartProductInfo {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.cartProductInfo p {
-    margin: 0 10px 10px 0;
-}
-.cartBtnArea {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.checkOutBtn {
-    border: 2px solid #D03A3B;
-    border-radius: 7px;
-    width: 400px;
-    height: 45px;
-    margin: 0 auto 20px;
-    background-color: #0C0C0C;
-    color: #f5f5f5;
-    font-size: 18px;
-    position: relative;
-    bottom: 0;
-}
 
 
 /* Product Billederne */

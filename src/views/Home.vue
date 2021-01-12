@@ -34,7 +34,7 @@
             <div class="track-wrapper">
               <div class="left">
                 <p>{{track.id}}</p> 
-                <p><font-awesome-icon :icon="[ 'far', 'play-circle' ]" class="play-circle" v-on:click="startMusic"  /></p> 
+                <p><font-awesome-icon :icon="[ 'far', 'play-circle' ]" class="play-circle" /></p> 
                 <!-- <p><font-awesome-icon :icon="[ 'far', 'pause-circle' ]" class="play-circle" v-on:click="startMusic"  /></p> -->
                 <p>{{track.name}}</p> 
               </div>

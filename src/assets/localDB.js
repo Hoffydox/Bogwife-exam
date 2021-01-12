@@ -127,6 +127,7 @@ export default [
                 "price": "20 €",
                 "shipping": "Ships within 15 days",
                 "category": "MU",
+                "sizes": [],
             },
             {
                 "id": 5,
@@ -136,6 +137,7 @@ export default [
                 "price": "20 €",
                 "shipping": "Ships within 15 days",
                 "category": "MU",
+                "sizes": [],
             },
             {
                 "id": 6,
@@ -145,6 +147,7 @@ export default [
                 "price": "20 €",
                 "shipping": "Ships within 15 days",
                 "category": "MU",
+                "sizes": [],
             },
         ],
        

@@ -10,9 +10,10 @@
                 <h2>{{ product.price }}</h2>
                 <p class="greyP">{{ product.shipping }}</p>
                 <form class="options-container">
-                    <div class="sizes" v-if="product.category == 'AP'" > <!-- 4 -6 produkt skal ikke have dette element.-->
+                <div class="sizes" v-if="product.category == 'AP'" > <!-- 4 -6 produkt skal ikke have dette element.
+                    <div class="sizes" v-if="product.sizes || product.sizes.length" > -->
                         <div class="size" v-for="size in sizeAvailable" :key="size.unit"> <!-- v-for sizes hvis nogle producter ikke har en size... -->
-                            <input type="radio" :id="size.unit + product.id" :name="`sizes` + product.id" :value="size.unit + product.id">
+                            <input v-model="sizeSelected" type="radio" :id="size.unit + product.id" :name="`sizes` + product.id" :value="size.unit">
                             <label :for="size.unit + product.id">{{size.unit}}</label>
                         </div>
                     </div>
@@ -29,7 +30,7 @@
                             </div>
                         </div>
                     
-                    <button class="buyBtn" type="button">
+                    <button class="buyBtn" type="button" @click="addToCart">
                         Buy
                     </button>
                 </form>
@@ -43,7 +44,8 @@ export default {
   data() {
       return {
           count: 1,
-          
+          sizeSelected: "null",
+          cartItem: [],
       }
   },
     methods: {
@@ -61,7 +63,21 @@ export default {
 
             }
             */
-      this.$store.dispatch("addToCart", this.product.id); // check content --- Det skal være cartItem som param
+
+           let cartId;
+           if (this.product.category == 'AP') { // skal stadig kunne definere om der er noget i array i stedet for AP - if (this.product.sizes) er den tom?
+               cartId = this.product.id + "-" + this.sizeSelected;
+           } else {
+               cartId =  this.product.id;
+           }
+           let cartItem = {
+               product: this.product,
+               quantity: this.count,
+               cartId: cartId,
+           }
+           console.log(cartItem);
+
+      this.$store.dispatch("addToCart", cartItem); // check content i store.js --- Det skal være cartItem som param
     }
     },
   computed: {

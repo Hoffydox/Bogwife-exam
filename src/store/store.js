@@ -18,7 +18,6 @@ export default new Vuex.Store({
     // analogous with the 'data' object/function in the vue options object
     state: {
         pages: [],
-        products: [],
         cart: []
 
 
@@ -30,10 +29,6 @@ export default new Vuex.Store({
         getPageByName: (state) => (name) => {
             return state.pages.find(page => page.name == name);
         },
-        getProductsById: (state) => (id) => {
-            return state.products.find(product => product.id == id);
-        },
-        products: (state) => state.products,
         StoreCart: (state) => state.cart,
     },
     // changes/manipulations in state has to be trough mutations!
@@ -47,8 +42,10 @@ export default new Vuex.Store({
             state.products = productsApiData;
         },
 
-        pushItem(state, id) {
+        pushItem(state, id) { 
+            // check if the same product already exists in state.cart
             state.cart.push(id);
+            console.log(state.cart)
         },
 
         omitItem(state, index) {
@@ -66,7 +63,8 @@ export default new Vuex.Store({
             context.commit('setPages', apiData);
             context.commit('setProducts', apiDataProducts);
         },
-        addItem(context, id) {
+        addToCart(context, id) {
+            console.log("action addToCart")
             context.commit("pushItem", id);
           },
       

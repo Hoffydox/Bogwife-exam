@@ -20,11 +20,13 @@
 
     <router-view />
     <player />
+    <footerComp />
   </div>
 </template>
 
 <script>
 import player from "./components/player.vue"
+import footerComp from "./components/footer.vue"
 export default {
   name: "App",
   computed: {
@@ -46,6 +48,7 @@ export default {
   },
   components: {
     player,
+    footerComp,
   },
 
   mounted: function () {
@@ -337,6 +340,44 @@ nav li a:hover {
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) { 
+
+.main-container .main-left, .main-container .main-right {
+  width: 100%;
+  margin: 30px auto;
+  padding-bottom: 0;
+}
+}
+
+
+
+@media screen and (max-width: 700px) { 
+
+h1 {
+  font-size: 45px;
+  margin: 0 0 30px;
+}
+h2 {
+  font-size: 26px;
+  margin: 0 0 25px;
+}
+
+strong {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin: 0 0 25px;
+}
+
+.p2 {
+  font-size: 10px;
+  margin: 0 0 25px;
+}
+
 }
 
 </style>

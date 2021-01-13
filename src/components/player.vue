@@ -274,6 +274,7 @@ color: #f5f5f5;
 position: fixed;
 bottom: 0;
 left: 0;
+z-index: 10;
 
 
 }

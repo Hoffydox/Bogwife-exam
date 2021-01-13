@@ -216,26 +216,29 @@ background-size: 100vw 100%;
  
 .album-container {
   padding: 0;
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
 background-image: none;
  /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;
-background-size: 0 0;
+background-size: 100 100;
   
 }
 
  .album-container .album-cover {
   
-	
-	
+	position: relative;
+  height: auto;
+  top: 0;
+  left: 0;
+	width: 100%;
   
   background-size: 0%;
   
 }
  
  .album-tracks {
-  width: 100%;
+  width: 391px;
   height: 593px;
   background-color: #0C0C0C;
   opacity: 100%;
@@ -250,6 +253,32 @@ background-size: 0 0;
   left: -130px;
   */
 }
+}
+
+@media screen and (max-width: 1000px) { 
+.album-tracks {
+  width: 100%;
+  height: 693px;
+  background-color: #0C0C0C;
+  opacity: 100%;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+
+/*
+  top: 0;
+  left: -130px;
+  */
+}
+
+}
+
+@media screen and (max-width: 700px) { 
+
+
+
 }
 
 </style>

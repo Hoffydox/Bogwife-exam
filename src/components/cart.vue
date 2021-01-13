@@ -31,7 +31,7 @@
           <div class="leftCart"></div>
           <div class="middleCart">
             <p class="noMargin">Total</p>
-            <h2> {{ totalAmount }} </h2>
+            <h2> {{ totalAmount }} &euro;</h2>
           </div>
           <div class="rightCart"></div>
           <button class="checkOutBtn">Check out</button>

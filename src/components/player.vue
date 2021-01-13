@@ -197,12 +197,14 @@ export default {
         this.songList[this.playlistIndex];
         this.playlist[this.playlistIndex].play();
         this.player = "start";
+        this.mute = "unmute";
         
       } else {
         this.playlist[this.playlistIndex++];
         this.songList[this.playlistIndex];
         this.playlist[this.playlistIndex].play();
         this.player = "start";
+        this.mute = "unmute";
         
       }
       

@@ -73,6 +73,7 @@ export default {
            let cartItem = {
                product: this.product,
                quantity: this.count,
+               size: this.sizeSelected,
                cartId: cartId,
            }
            console.log(cartItem);

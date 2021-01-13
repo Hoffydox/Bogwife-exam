@@ -6,9 +6,14 @@
     <div class="middleCart">
       <div class="cartProductInfo">
         <p class="fullWidth"> {{ cartItem.product.title }} </p>
-        <p>Size: M</p>
-        <p>Quantity: {{ cartItem.quantity }}</p> <!-- rigtigt? -->
-        <div class="quantityBtn">
+        <div class="size">
+          <p>Size: {{ cartItem.size }}</p>
+        </div>
+        <div class="quantityArea">
+          <p>Quantity: {{ cartItem.quantity }}</p> <!-- rigtigt? -->
+          <div class="quantityBtn">
+
+        </div>
           <div class="right">
             <button class="quantityUp" v-on:click="count++" type="button"> <!-- make an action that changes the quantity in the cart  -->
               <font-awesome-icon icon="caret-up" />
@@ -18,9 +23,11 @@
             </button>
           </div>
         </div>
-        <p>Send as gift:</p>
-        <input type="checkbox" />
-        <p class="fullWidth">price: {{ cartItem.product.price }}</p>
+        <div class="gift">
+          <span>Send as gift: </span>
+          <input type="checkbox" />
+        </div>
+        <p class="fullWidth">price: {{ cartItem.product.price }} &euro;</p>
       </div>
     </div>
     <div class="rightCart">
@@ -73,4 +80,45 @@ export default {
 .cartProductInfo p {
     margin: 0 10px 10px 0;
 }
+.quantityArea {
+  display: flex;
+flex-wrap: wrap;
+}
+.quantityUp, .quantityDown {
+    width: 26px;
+    height: 16px;
+    background-color: #0C0C0C;
+    border: 1px solid #f5f5f5;
+    color: #f5f5f5;
+    display: block;
+    padding: 0;
+}
+
+.quantityUp svg, .quantityDown svg {
+    padding-bottom: 2px;
+}
+
+.size {
+  width: 45%;
+}
+
+.gift {
+  margin: 10px 0;
+  width: 50%;
+}
+
+.gift input{
+  border: 1px solid #f5f5f5;
+  background-color: none;
+}
+
+span {
+  color: #f5f5f5;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+
 </style>

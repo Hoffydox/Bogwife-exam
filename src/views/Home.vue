@@ -46,7 +46,7 @@
            
           </li>
           <button class="buyBtn">Buy Album</button>
-          <p class="greyP">
+          <p class="greyAlbum">
            
                Recorded and mixed by Jacob Bredahl at 
                 Dead Rat Studio in Aarhus, Denmark.
@@ -158,6 +158,16 @@ background-size: 100vw 100%;
   background-size: 90%;
 }
 
+.album-container .album-title, .buyBtn, .greyAlbum {
+  margin-left: 55px;
+}
+
+.greyAlbum {
+  color: #979797;
+  font-size: 12px;
+  max-width: 70%;
+}
+
 .album-tracks {
   width: 391px;
   height: 593px;
@@ -165,8 +175,13 @@ background-size: 100vw 100%;
   opacity: 95%;
 
   position: absolute;
+  top: 15vh;
+  left: -10vw;
+
+/*
   top: 0;
   left: -130px;
+  */
 }
 
 .track-wrapper {
@@ -197,5 +212,44 @@ background-size: 100vw 100%;
   font-size: 30px
 }
 
+@media screen and (max-width: 1350px) {
+ 
+.album-container {
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+background-image: none;
+ /* background-image: url("../assets/img/introimg.png"); */
+background-repeat: no-repeat;
+background-size: 0 0;
+  
+}
+
+ .album-container .album-cover {
+  
+	
+	
+  
+  background-size: 0%;
+  
+}
+ 
+ .album-tracks {
+  width: 100%;
+  height: 593px;
+  background-color: #0C0C0C;
+  opacity: 100%;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+
+/*
+  top: 0;
+  left: -130px;
+  */
+}
+}
 
 </style>

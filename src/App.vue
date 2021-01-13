@@ -146,6 +146,7 @@ video {
   vertical-align: baseline;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-family: Roboto;
+  
 }
 
 html,
@@ -169,6 +170,11 @@ body {
 
    background-color: #0C0C0C;
 }
+
+li {
+  list-style: none;
+}
+
 h1, h2, h3, h4, h5, p, a {
    color: #F5F5F5;
    text-decoration: none;
@@ -199,6 +205,10 @@ p {
 
 .greyP {
   color: #979797;
+}
+
+.fullWidth {
+    width: 100%;
 }
 
 a:hover {

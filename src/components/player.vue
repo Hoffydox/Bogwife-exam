@@ -1,21 +1,25 @@
 <template>
 
   <div id="player" >
-    <div class="player-small" :v-class="{smallExpanded: expand}" >
+    <div class="player-small" :class="{ active: isActive }" >
        <!-- <button @click="playBack">Back</button> -->
+       <div class="player-left">
+
+       
        <div class="player-btns">
             <font-awesome-icon class="back-next-icon" icon="step-backward" @click="playBack" />
       
-        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'play-circle' ]" v-if="player == 'stop' " @click="playStart(); expands();" />
-        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'pause-circle' ]" v-if="player == 'start'" @click="playStop(); expands();" />
+        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'play-circle' ]" v-if="player == 'stop' " @click="playStart();"  />
+        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'pause-circle' ]" v-if="player == 'start'" @click="playStop();" />
       <!-- <button v-if="player == 'stop' " @click="playStart">start</button> 
       <button v-if="player == 'start'" @click="playStop">stop</button>
       
       <button @click="playNext">Next</button> -->
       <font-awesome-icon class="back-next-icon" icon="step-forward" @click="playNext" />
+      </div>
+      <h2><span v-if="player == 'start'">Halls of Rebirth - </span>{{ songList[playlistIndex].songTitel }}</h2>
        </div>
       
-      <h2><span v-if="player == 'start'">Halls of Rebirth - </span>{{ songList[playlistIndex].songTitel }}</h2>
       <div v-if="player == 'start'" class="player-big">
         <p class="songlength">{{ songList[playlistIndex].duration }}</p>
         <div class="seeker">
@@ -29,7 +33,10 @@
       <div class="volume-container">
         <input v-on:change="updateVolume" v-model="volumeInput" type="range" min="0" max="100" class="volumeInput" id="myRange" />
       </div>
-      <h2>Listen on Spotify:</h2>
+      
+    </div>
+    <div v-if="player == 'start'" class="player-spotify">
+        <h2>Listen on Spotify:</h2>
       <font-awesome-icon class="spotify" :icon="[ 'fab', 'spotify' ]" />
     </div>
     </div>
@@ -83,7 +90,7 @@ export default {
           duration: "6:34",
         },
       ],
-        expand: false,
+        isActive: false,
       player: "stop",
       mute: "unmute",
       sound: null,
@@ -106,9 +113,9 @@ export default {
     },
   },
   methods: {
-      expands: function () {
+     /* expands: function () {
           this.expand = !this.expand;
-      },
+      }, */
     howlerInit: function () {
       // Setup the new Howls.
 
@@ -160,10 +167,13 @@ export default {
       this.player = "start";
       this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
       this.playlist[this.playlistIndex].play();
+      this.isActive = true;
+      
     },
     playStop() {
       this.player = "stop";
       this.playlist[this.playlistIndex].pause();
+      this.isActive = false;
     },
     playMute() {
       this.mute = "mute";
@@ -273,6 +283,10 @@ left: 0;
   border: 1px solid #D03A3B;
   border-bottom: none;
 }
+.player-small .player-left {
+    display: flex;
+  flex-wrap: wrap;
+}
 .player-btns {
     display: flex;
   flex-wrap: wrap;
@@ -294,9 +308,10 @@ padding: 16px 0;
 }
 
 .mute-unmute-icon {
-font-size: 44px;
+font-size: 30px;
 color: #f5f5f5;
-padding: 16px 10px 0 0 ;
+padding: 22px 10px 0 0 ;
+width: 34px;
 }
 
 .player-big {
@@ -306,6 +321,14 @@ padding: 16px 10px 0 0 ;
   height: 76px;
   justify-content: space-evenly;
   
+  
+}
+
+.player-spotify {
+    display: flex;
+  flex-wrap: wrap;
+  height: 76px;
+  justify-content: space-evenly;
 }
 
 .songlength {
@@ -373,9 +396,10 @@ button {
   border-radius: 15px;
 }
 
-.smallExpanded {
+.active {
     width: 100%;
-    background-color: blue;
+    justify-content: space-between;
+    
 }
 
 </style>

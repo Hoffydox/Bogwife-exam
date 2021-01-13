@@ -12,6 +12,7 @@
               <p>Website by Group 5 MMDA 2020</p>
 
           </div>
+          <div class="player-room"></div>
 
       </div>
   </div>
@@ -64,6 +65,9 @@ export default {
 
 #footer .footer-container .footer-content .footerIcons .soMeIcon {
     margin: 0 15px;
+}
+.player-room {
+    height: 80px;
 }
 
 @media screen and (max-width: 810px) { 

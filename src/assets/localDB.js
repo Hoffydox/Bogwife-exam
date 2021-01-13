@@ -79,7 +79,7 @@ export default [
                         "unit": "XL",
                         "name": "X-Large",
                     }
-                    
+
                 ],
             },
             {
@@ -150,7 +150,7 @@ export default [
                 "sizes": [],
             },
         ],
-       
+
     },
     {
         "id": 2,
@@ -176,8 +176,14 @@ export default [
             "text3": "\"As I often trudge through the deep, dark depths of the heavy underground's murky mire, I often stubble across some unknown piece peering up out of the water at me. What I saw and heard was a solid mix of petrified and epic lead guitar and pounding rhythm section that captures the tenor of the time. Bogwife offers their listeners a mead soaked representation of what heavy can be in 2020.\"",
             "text4": "- Robert Panell at the Doom Charts from July 2020",
 
-        }
-    },
+        },
+        "article4": {
+            "header": "News",
+            "Post1": {
+                "header": "Her kan der stå noget",
+                "text1": "",
+            }
+        },
     {
         "id": 3,
         "name": "Events",
@@ -220,7 +226,7 @@ export default [
                 "date": "14/5/2021",
             },
         ],
-       
+
     },
     {
         "id": 4,
@@ -264,6 +270,6 @@ export default [
                 "name": "Abyss",
                 "duration": "6:34",
             }
-        ]        
+        ]
     },
 ]

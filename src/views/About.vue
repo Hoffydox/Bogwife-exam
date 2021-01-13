@@ -37,16 +37,21 @@
                     <img src="../assets/img/aboutimg2.png">
                 </div>
 
-            <div class="instagram-container">
-                <div class="instagram-feed">
-                    insta1
+            <div class="news-container">
+                <div class="news-left">
+                    <div class="text-wrapper">
+                        <h2>{{ page.article4.header }}</h2>
+                        <p>{{ page.article4.text1 }}</p>
+                        <p>{{ page.article4.text2 }}</p>
+                    </div>
                 </div>
-                <div class="instagram-feed">
-                    insta2
+                <div class="news-right">
+                    <img src="../assets/img/aboutimg1.png">
+                    <img src="../assets/img/aboutimg2.png">
                 </div>
-                <div class="instagram-feed">
+                <!-- <div class="news-feed">
                     insta3
-                </div>
+                </div> -->
             </div>
 
         </div>

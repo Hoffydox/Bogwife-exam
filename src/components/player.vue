@@ -14,10 +14,10 @@
       <button @click="playNext">Next</button> -->
       <font-awesome-icon class="back-next-icon" icon="step-forward" @click="playNext" />
        </div>
-       
-      <h2>{{ songList[playlistIndex].songTitel }}</h2>
+      
+      <h2><span v-if="player == 'start'">Halls of Rebirth - </span>{{ songList[playlistIndex].songTitel }}</h2>
       <div v-if="player == 'start'" class="player-big">
-        <p>{{ songList[playlistIndex].duration }}</p>
+        <p class="songlength">{{ songList[playlistIndex].duration }}</p>
         <div class="seeker">
             <input v-model="seekerInput" type="range" min="0" max="100" class="seekerInput" id="myRange">
         </div>
@@ -27,9 +27,10 @@
         <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-mute' ]" v-if="mute == 'mute' " @click="playUnmute" />
    
       <div class="volume-container">
-        <input v-on:change="updateVolume" v-model="volumeInput" type="range" min="0" max="100" class="slider" id="myRange" />
+        <input v-on:change="updateVolume" v-model="volumeInput" type="range" min="0" max="100" class="volumeInput" id="myRange" />
       </div>
-      <h2>Listen on Spotify:</h2><h2>Spotify</h2>
+      <h2>Listen on Spotify:</h2>
+      <font-awesome-icon class="spotify" :icon="[ 'fab', 'spotify' ]" />
     </div>
     </div>
   </div>
@@ -293,27 +294,41 @@ padding: 16px 0;
 .mute-unmute-icon {
 font-size: 44px;
 color: #f5f5f5;
-padding: 16px 0;
+padding: 16px 10px 0 0 ;
 }
 
 .player-big {
+  padding-left: 300px;
   display: flex;
   flex-wrap: wrap;
   height: 76px;
   justify-content: space-evenly;
+  
+}
+
+.songlength {
+    margin: 27px 5px 0 10px;
 }
 
 .seeker {
   
   width: 330px;
+  margin-right: 20px;
   
 }
 
 .seeker .seekerInput {
+padding: 32px 0;
   height: 6px;
   width: 330px;
   color: #2D2D2D;
   background-color: #2D2D2D;
+  
+}
+
+.volumeInput {
+    height: 6px;
+    padding: 32px 0;
 }
 
 
@@ -321,6 +336,14 @@ h2 {
     font-size: 18px;
     margin: 27px 25px 0 10px;
     
+}
+
+
+
+.spotify {
+    font-size: 50px;
+    padding: 12px 50px 0 0;
+    color: #1DB954;
 }
 
 
@@ -347,4 +370,6 @@ button {
   background: #555;
   border-radius: 15px;
 }
+
+
 </style>

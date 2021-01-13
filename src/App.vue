@@ -19,10 +19,12 @@
     <!-- <img class="HeroImages" src="./assets/img/AboutHero.png"> -->
 
     <router-view />
+    <player />
   </div>
 </template>
 
 <script>
+import player from "./components/player.vue"
 export default {
   name: "App",
   computed: {
@@ -41,6 +43,9 @@ export default {
       return this.$store.state.products;
     }, */
     
+  },
+  components: {
+    player,
   },
 
   mounted: function () {

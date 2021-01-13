@@ -11,22 +11,32 @@
     <div class="main-container">
       <div class="main-left">
         <div class="text-wrapper">
-          <h1>{{ page.name }}</h1>
-          <h2>{{ page.article1.header }}</h2>
+            <h1>{{ page.name }}</h1>
+            <div class="textSpacer">
+            <h2>{{ page.article1.header }}</h2>
           <p>{{ page.article1.text1 }}</p>
           <p>{{ page.article1.text2 }}</p>
-
-          <h2>{{ page.article2.header }}</h2>
+            </div>
+            <div class="textSpacer">
+            <h2>{{ page.article2.header }}</h2>
           <p>{{ page.article2.text1 }}</p>
           <p>{{ page.article2.text2 }}</p>
           <p>{{ page.article2.text3 }}</p>
           <p>{{ page.article2.text4 }}</p>
+            </div>
+            <div class="textSpacer">
+            <h2>{{ page.article3.header }}</h2>
+            <p>{{ page.article3.text1 }}</p>
+            <p>{{ page.article3.text2 }}</p>
+            <p>{{ page.article3.text3 }}</p>
+            <p>{{ page.article3.text4 }}</p>
+            </div>
+          
+         
 
-          <h2>{{ page.article3.header }}</h2>
-          <p>{{ page.article3.text1 }}</p>
-          <p>{{ page.article3.text2 }}</p>
-          <p>{{ page.article3.text3 }}</p>
-          <p>{{ page.article3.text4 }}</p>
+         
+
+         
         </div>
       </div>
       <div class="main-right">
@@ -120,6 +130,16 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.textSpacer {
+    margin: 0 0 50px 0;
+    width: 100%;
+}
+
+.textSpacer h2 {
+    margin: 0 0 15px 0;
+    width: 100%;
 }
 
 .news-container .news-feed {

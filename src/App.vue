@@ -158,6 +158,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   margin: 0;
+  background:  #f5f5f5;
  
 }
 

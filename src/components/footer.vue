@@ -52,6 +52,7 @@ export default {
 #footer .footer-container .footer-content p {
     color: #0C0C0C;
     padding: 20px 0;
+    margin: 0;
 }
 
 #footer .footer-container .footer-content .footerIcons {
@@ -68,6 +69,7 @@ export default {
 }
 .player-room {
     height: 80px;
+    width: 100%;
     background-color: #f5f5f5;
 }
 
@@ -75,6 +77,7 @@ export default {
 
 #footer .footer-container .footer-content {
     display: block;
+    background-color: #f5f5f5;
 
 }
 

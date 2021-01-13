@@ -18,9 +18,14 @@
       <h2>{{ songList[playlistIndex].songTitel }}</h2>
       <div v-if="player == 'start'" class="player-big">
         <p>{{ songList[playlistIndex].duration }}</p>
-        <div class="seeker"></div>
-      <button v-if="mute == 'unmute' " @click="playMute">Mute</button>
-      <button v-if="mute == 'mute' " @click="playUnmute">Unmute</button>
+        <div class="seeker">
+            <input v-model="seekerInput" type="range" min="0" max="100" class="seekerInput" id="myRange">
+        </div>
+
+        
+        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-mute' ]" v-if="mute == 'unmute' " @click="playMute" />
+        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-up' ]" v-if="mute == 'mute' " @click="playUnmute" />
+   
       <div class="volume-container">
         <input v-on:change="updateVolume" v-model="volumeInput" type="range" min="0" max="100" class="slider" id="myRange" />
       </div>
@@ -284,6 +289,13 @@ font-size: 44px;
 color: #D03A3B;
 padding: 16px 0;
 }
+
+.mute-unmute-icon {
+font-size: 44px;
+color: #f5f5f5;
+padding: 16px 0;
+}
+
 .player-big {
   display: flex;
   flex-wrap: wrap;
@@ -292,9 +304,16 @@ padding: 16px 0;
 }
 
 .seeker {
-  height: 76px;
-  width: 300px;
-  background-color: darkblue;
+  
+  width: 330px;
+  
+}
+
+.seeker .seekerInput {
+  height: 6px;
+  width: 330px;
+  color: #2D2D2D;
+  background-color: #2D2D2D;
 }
 
 

@@ -38,7 +38,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post1.header }}</h2>
-            <img class="fullWidth" src="../assets/img/newsDoomChart.JPG" />
+            <img class="fullWidth" src="../assets/img/newsDoomChart.jpg" />
             <p>
               {{ page.article4.post1.text1 }}
               <a href="">{{ page.article4.post1.text2 }}</a>

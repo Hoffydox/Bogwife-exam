@@ -179,10 +179,18 @@ export default [
         },
         "article4": {
             "header": "News",
-            "Post1": {
-                "header": "Her kan der stå noget",
-                "text1": "",
-            }
+                "post1": {
+                    "header": "Happy new year everyone",
+                    "text1": "We are thankful to be included in top 100 albums of 2020 Doom Charts --> instagram.com/doomcharts/ and as 58th is just crazy!!! When we released the record in august we were looking forward to all the gigs. But instead we started working on a new release. Hopefully it will drop this summer and we hope it will be as well received as Halls of Rebirth.Thanks a lot and hopefully 2021 will be full of live shows!",
+                },
+                "post2": {
+                    "header": "#2020ARTISTWRAPPED",
+                    "text1": "We are so thankful for all your support. We never thought that our first record would be so well received. 300 vinyls printed and less than half a year later we don’t have many left. This means studio time again in February. We cannot thank you enough for making our dreams come through.",
+                },
+                "post3": {
+                    "header": "The Vinyls have landed",
+                    "text1": "Finally, now we start shipping!!",
+                }
         },
     },
     {

@@ -23,8 +23,8 @@
         </div>
 
         
-        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-mute' ]" v-if="mute == 'unmute' " @click="playMute" />
-        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-up' ]" v-if="mute == 'mute' " @click="playUnmute" />
+        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-up' ]" v-if="mute == 'unmute' " @click="playMute" />
+        <font-awesome-icon class="mute-unmute-icon" :icon="[ 'fas', 'volume-mute' ]" v-if="mute == 'mute' " @click="playUnmute" />
    
       <div class="volume-container">
         <input v-on:change="updateVolume" v-model="volumeInput" type="range" min="0" max="100" class="slider" id="myRange" />

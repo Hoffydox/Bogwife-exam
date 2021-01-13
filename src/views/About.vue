@@ -129,10 +129,9 @@ export default {
   width: 370px;
   height: 786px;
 }
-<<<<<<< Updated upstream
 .news-container .news-feed img {
     margin-bottom: 25px;
-=======
+}
 
 @media screen and (max-width: 1000px) { 
 
@@ -149,6 +148,5 @@ export default {
   width: 85%;
   
 }
->>>>>>> Stashed changes
 }
 </style>

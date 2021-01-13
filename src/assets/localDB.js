@@ -184,6 +184,7 @@ export default [
                 "text1": "",
             }
         },
+    },
     {
         "id": 3,
         "name": "Events",

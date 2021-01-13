@@ -68,6 +68,7 @@ export default {
 }
 .player-room {
     height: 80px;
+    background-color: #f5f5f5;
 }
 
 @media screen and (max-width: 810px) { 

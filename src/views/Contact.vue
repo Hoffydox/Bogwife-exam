@@ -26,7 +26,7 @@
         </div>
         <div class="right">
           <div class="infoContainer">
-            <h2>BOOK BUISINESS</h2>
+            <h2>BOOK BUSINESS</h2>
             <p>SEND E-MAIL TO MANAGER:<br>MANAGER@BOGWIFE.COM</p>
             <p>SEND E-MAIL TO PRESS:<br>PRESS@BOGWIFE.COM</p>
             <p>SEND E-MAIL TO BOOKING:<br>BOOK@BOGWIFE.COM</p>

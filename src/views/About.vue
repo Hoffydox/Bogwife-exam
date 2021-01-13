@@ -48,6 +48,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post2.header }}</h2>
+            <img class="fullWidth" src="../assets/img/newsSpotifyArtist.jpg" />
             <p>
               {{ page.article4.post2.text1 }}
             </p>
@@ -56,6 +57,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post3.header }}</h2>
+            <img class="fullWidth" src="../assets/img/newsVinyler.jpg" />
             <p>
               {{ page.article4.post3.text1 }}
             </p>
@@ -123,8 +125,11 @@ export default {
 .news-container .news-feed {
   margin: 0 auto;
   padding: 0 10px;
-  background-color: rgb(255, 217, 217);
+  /* background-color: rgb(255, 217, 217); */
   width: 370px;
   height: 786px;
+}
+.news-container .news-feed img {
+    margin-bottom: 25px;
 }
 </style>

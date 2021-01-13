@@ -1,13 +1,13 @@
 <template>
 
-  <div id="player">
-    <div class="player-small">
+  <div id="player" >
+    <div class="player-small" :v-class="{smallExpanded: expand}" >
        <!-- <button @click="playBack">Back</button> -->
        <div class="player-btns">
             <font-awesome-icon class="back-next-icon" icon="step-backward" @click="playBack" />
       
-        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'play-circle' ]" v-if="player == 'stop' " @click="playStart" />
-        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'pause-circle' ]" v-if="player == 'start'" @click="playStop" />
+        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'play-circle' ]" v-if="player == 'stop' " @click="playStart(); expands();" />
+        <font-awesome-icon class="play-pause-icon" :icon="[ 'far', 'pause-circle' ]" v-if="player == 'start'" @click="playStop(); expands();" />
       <!-- <button v-if="player == 'stop' " @click="playStart">start</button> 
       <button v-if="player == 'start'" @click="playStop">stop</button>
       
@@ -83,7 +83,7 @@ export default {
           duration: "6:34",
         },
       ],
-
+        expand: false,
       player: "stop",
       mute: "unmute",
       sound: null,
@@ -106,6 +106,9 @@ export default {
     },
   },
   methods: {
+      expands: function () {
+          this.expand = !this.expand;
+      },
     howlerInit: function () {
       // Setup the new Howls.
 
@@ -157,7 +160,6 @@ export default {
       this.player = "start";
       this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
       this.playlist[this.playlistIndex].play();
-      
     },
     playStop() {
       this.player = "stop";
@@ -298,7 +300,7 @@ padding: 16px 10px 0 0 ;
 }
 
 .player-big {
-  padding-left: 300px;
+  
   display: flex;
   flex-wrap: wrap;
   height: 76px;
@@ -371,5 +373,9 @@ button {
   border-radius: 15px;
 }
 
+.smallExpanded {
+    width: 100%;
+    background-color: blue;
+}
 
 </style>

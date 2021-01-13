@@ -156,7 +156,7 @@ export default [
         "id": 2,
         "name": "About",
         "description": "beskrivelse af en art nummer 2",
-        "url": "AboutHero.png",
+        "url": "AboutHero.jpg",
         "article1": {
             "header": "Stoner Rock",
             "text1": "Influenced by doom and psychedelic, Bogwife is a four-piece stoner rock band. Originating from Aalborg in the northern part of Denmark and formed in 2018.",

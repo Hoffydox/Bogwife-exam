@@ -30,8 +30,8 @@
         </div>
       </div>
       <div class="main-right">
-        <img src="../assets/img/aboutimg1.png" />
-        <img src="../assets/img/aboutimg2.png" />
+        <img src="../assets/img/aboutimg1.jpg" />
+        <img src="../assets/img/aboutimg2.jpg" />
       </div>
 
       <div class="news-container">

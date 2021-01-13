@@ -16,7 +16,7 @@
           
         </div>
         <div class="main-right">
-          <img src="../assets/img/homeImg.png">
+          <img src="../assets/img/homeimg.jpg">
           
         </div>
       </div>

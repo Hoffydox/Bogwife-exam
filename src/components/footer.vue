@@ -48,12 +48,43 @@ export default {
     justify-content: space-evenly;
 }
 
+#footer .footer-container .footer-content p {
+    color: #0C0C0C;
+    padding: 20px 0;
+}
+
 #footer .footer-container .footer-content .footerIcons {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 300px;
+    
     padding: 15px 0 0 0;
     font-size: 30px;
+}
+
+#footer .footer-container .footer-content .footerIcons .soMeIcon {
+    margin: 0 15px;
+}
+
+@media screen and (max-width: 810px) { 
+
+#footer .footer-container .footer-content {
+    display: block;
+
+}
+
+#footer .footer-container .footer-content p {
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+#footer .footer-container .footer-content .footerIcons {
+    
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px 0 0 0;
+    
+}
+
 }
 </style>

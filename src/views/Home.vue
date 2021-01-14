@@ -257,9 +257,7 @@ background-size: 100vw 100%;
   margin-right: 15px;
   justify-self: center;
 }
-.track-wrapper .right{
-  /* might not need this*/ 
-}
+
 
 .play-circle {
   
@@ -273,7 +271,7 @@ background-size: 100vw 100%;
   height: 150vh;
   width: 100vw;
 background-image: none;
- /* background-image: url("../assets/img/introimg.png"); */
+
 background-repeat: no-repeat;
 background-size: 100 100;
   

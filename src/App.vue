@@ -293,8 +293,8 @@ a.router-link-exact-active.router-link-active {
 
 .HeroImages-Container {
   /* height: 800px; */
-  height: 60vw;
-  max-height: 80vh;
+  height: 45vw;
+  max-height: 80%;
   background-color: #0C0C0C;
 }
 .HeroImages {
@@ -358,9 +358,33 @@ a.router-link-exact-active.router-link-active {
   margin: 30px auto;
   padding-bottom: 0;
 }
+
+nav {
+  display: block;
+  text-align: center;
+  height: 125px;
+
 }
 
+nav .navLeft {
+  width: 100%;
+  margin: 20px auto;
+}
 
+nav .navRight {
+  width: 100%;
+  margin: 10px auto;
+}
+
+nav .navRight ul{
+  justify-content: space-around;
+  padding: 0 20px;
+}
+#LandingPageLogo {
+  width: 200px;
+  
+}
+}
 
 @media screen and (max-width: 700px) { 
 

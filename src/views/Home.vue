@@ -45,7 +45,8 @@
             </div>
            
           </li>
-          <button class="buyBtn">Buy Album</button>
+          <div class="album-buttom">
+  <button class="buyBtn">Buy Album</button>
           <p class="greyAlbum">
            
                Recorded and mixed by Jacob Bredahl at 
@@ -56,6 +57,8 @@
                 &#169; all rights reserved 
             
           </p>
+          </div>
+        
 
         </div>
           </div>
@@ -229,7 +232,7 @@ background-size: 100 100;
   
 	position: relative;
   height: auto;
-  top: 0;
+  top: 2.5%;
   left: 0;
 	width: 100%;
   
@@ -256,6 +259,11 @@ background-size: 100 100;
 }
 
 @media screen and (max-width: 1000px) { 
+
+  .album-container .album-cover {
+  top: 0;
+  height: 533px
+  }
 .album-tracks {
   width: 100%;
   height: 693px;
@@ -273,12 +281,71 @@ background-size: 100 100;
   */
 }
 
+
 }
 
 @media screen and (max-width: 700px) { 
 
+p {
+  margin: 0px 0 20px;
+}
+
+.album-buttom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buyBtn, .greyAlbum {
+  margin: 0 10px ;
+  width: 45%;
+}
 
 
+.album-tracks {
+  width: 100%;
+  height: 533px;
+  background-color: #0C0C0C;
+  opacity: 100%;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+
+/*
+  top: 0;
+  left: -130px;
+  */
+}
+
+
+}
+
+@media screen and (max-width: 530px) {
+  .greyAlbum {
+    font-size: 8px;
+  }
+
+.buyBtn  {
+  width: 30%;
+  font-size: 16px;
+}
+
+ .greyAlbum {
+  width: 55%;
+}
+  p {
+    margin-bottom: 10px;
+  }
+
+  .track-wrapper .left {
+    
+    width: 50%;
+}
+
+.track-wrapper {
+    justify-content: space-around;
+}
 }
 
 </style>

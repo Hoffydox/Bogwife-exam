@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- Alle billeder og alt musik er eget af Bogwife - 2021.-->
     <nav ref="navAnim">
       <div class="navLeft">
         <router-link to="/">
@@ -21,6 +22,7 @@
     <router-view />
     <player />
     <footerComp />
+    <!-- Alle billeder og alt musik er eget af Bogwife - 2021.-->
   </div>
 </template>
 

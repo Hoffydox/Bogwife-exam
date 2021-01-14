@@ -2,14 +2,14 @@
   <div id="footer">
       <div class="footer-container">
           <div class="footer-content">
-              <p>All music rights reserved Bogwife 2020</p>
+              <p>All rights reserved Bogwife 2021</p>
               <div class="footerIcons">
                     <font-awesome-icon :icon="[ 'fab', 'facebook' ]" class="soMeIcon" />
                     <font-awesome-icon :icon="[ 'fab', 'instagram' ]" class="soMeIcon" />
                     <font-awesome-icon :icon="[ 'fab', 'youtube' ]" class="soMeIcon" />
                     <font-awesome-icon :icon="[ 'fab', 'spotify' ]" class="soMeIcon" />
               </div>
-              <p>Website by Group 5 MMDA 2020</p>
+              <p>Website by Group 5 MMDA 2021</p>
 
           </div>
           <div class="player-room"></div>

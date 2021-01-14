@@ -12,7 +12,8 @@
             <h2>{{page.article1.header}}</h2>
             <p><strong>{{page.article1.text1}}</strong></p>
             <p>{{page.article1.text2}}</p>
-            <button class="readBtn buyBtn">Read More</button>
+            
+            <router-link to="/About"> <button class="readBtn buyBtn">Read More</button> </router-link>
           </div>
           
         </div>

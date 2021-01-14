@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav>
+    <nav ref="navAnim">
       <div class="navLeft">
         <router-link to="/">
           <img id="LandingPageLogo" src="./assets/img/logo.png" alt="" />
@@ -27,8 +27,14 @@
 <script>
 import player from "./components/player.vue"
 import footerComp from "./components/footer.vue"
+import gsap from "gsap"
 export default {
   name: "App",
+  data() {
+    return {
+      navTimeline: null,
+    }
+  },
   computed: {
     //vue will look for it if there are updates?
     pages: function () {
@@ -46,6 +52,22 @@ export default {
     }, */
     
   },
+  methods: {
+    navAnimation: function () {
+      
+
+      this.navTimeline = gsap.timeline({
+      delay: 1.2,
+      // repeat: 3
+      
+    });
+
+    this.navTimeline.to(this.$refs.navAnim, {opacity: 1,  duration: 4, ease: "expo"});
+    
+    
+   },
+  },
+  
   components: {
     player,
     footerComp,
@@ -54,6 +76,7 @@ export default {
   mounted: function () {
     this.$store.dispatch("load"); // dollor sign means???
     /* this.imagesLoad(); */
+    this.navAnimation();
   },
 };
 </script>
@@ -237,6 +260,7 @@ nav {
   top: 0;
   width: 100vw;
   z-index: 2;
+  opacity: 0;
 }
 
 

@@ -4,7 +4,7 @@
  <div  id="home-hero-container" class="HeroImages-Container" :style="{'background-image': 'url('+ require(`../assets/img/` + page.url) +')'}">
       
     </div>
-    
+    <div class="redOneBox" ref="redOne"> </div>
       <div class="main-container ">
         
         <div class="main-left">
@@ -72,11 +72,47 @@
 </template>
 
 <script>
-// import threeCanvas from "../components/threeCanvas.vue";  HUSK AT IMPORTE COMPONENT HER
+import gsap from "gsap";
 
 export default {
   name: "Home",
- 
+  data() {
+    return {
+
+      timeline: null,
+      sway: null,
+      
+      
+
+    }
+  },
+ methods: {
+   IntroHome: function () {
+
+      this.timeline = gsap.timeline({
+      delay: 0.4,
+      // repeat: 3
+      
+    });
+
+    this.timeline.to(this.$refs.redOne, {opacity: 1, scale: 1.01,  duration: 4, ease: "expo"});
+    
+    this.repeatSway();
+   },
+   repeatSway: function () {
+     this.sway = gsap.timeline({
+      delay: 3,
+      repeat: -1,
+      
+      
+    });
+
+    this.sway.to(this.$refs.redOne, {x: 1, duration: 4, ease: "expo.out"});
+    this.sway.to(this.$refs.redOne, {x: 1, opacity: 0.85, duration: 3, ease: "expo"});
+    this.sway.to(this.$refs.redOne, {x: 0,  duration: 4, ease: "expo.out"});
+    this.sway.to(this.$refs.redOne, {x: 0, opacity: 1, duration: 3, ease: "expo"});
+   }
+ },
   // components: { threeCanvas },  HUSK AT IMPORTE COMPONENT HER
   computed: {
     page: function () {
@@ -92,13 +128,28 @@ export default {
     
     
   },
+  mounted() {
+    this.IntroHome();
+
+  }
+  
 };
 </script>
 
 <style >
 
 
-
+.redOneBox {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/img/Layer0.png");
+  background-repeat: no-repeat;
+background-size: 36vw auto;
+position: absolute;
+top: 21vw;
+left: 29vw;
+opacity: 0;
+}
 
 
 #home #home-hero-container {

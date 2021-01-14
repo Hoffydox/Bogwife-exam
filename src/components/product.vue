@@ -65,7 +65,7 @@ export default {
             */
 
            let cartId;
-           if (this.product.category == 'AP') { // skal stadig kunne definere om der er noget i array i stedet for AP - if (this.product.sizes) er den tom?
+           if (this.product.category == 'AP') {                                 // skal stadig kunne definere om der er noget i array i stedet for AP - if (this.product.sizes) er den tom?
                cartId = this.product.id + "-" + this.sizeSelected;
            } else {
                cartId =  this.product.id;

@@ -1,7 +1,7 @@
 <template>
 
   <div id="player" >
-    <div class="player-small" :class="{ active: isActive }" >
+    <div class="player-small" ref="playerAnim" :class="{ active: isActive }" >
        <!-- <button @click="playBack">Back</button> -->
        <div class="player-left">
 
@@ -52,6 +52,7 @@
 //
 // import gsap from "gsap";
 import { Howl, Howler } from "howler";
+import gsap from "gsap";
 
 export default {
   name: "musicPlayer",
@@ -104,6 +105,9 @@ export default {
 
       volume: 0.5,
       volumeInput: 50,
+
+        timeline: null,
+      playerAnimStart: null,
       
     };
   },
@@ -207,30 +211,49 @@ export default {
         this.mute = "unmute";
         
       }
-      
+      this.isActive = true;
       console.log("next");
       console.log(this.playlistIndex);
     },
       playBack() {
       this.playlist[this.playlistIndex].stop();
       // if no more in list -> playlistIndex = 0
-      if (this.playlistIndex >= 4) {
-        this.playlistIndex = 0;
+      if (this.playlistIndex <= 0) {
+        this.playlistIndex = 4;
         this.songList[this.playlistIndex];
         this.playlist[this.playlistIndex].play();
         this.player = "start";
+        this.mute = "unmute";
         
       } else {
-        this.playlist[this.playlistIndex++];
+        this.playlist[this.playlistIndex--];
         this.songList[this.playlistIndex];
         this.playlist[this.playlistIndex].play();
         this.player = "start";
+        this.mute = "unmute";
         
       }
-      
+      this.isActive = true;
       console.log("next");
       console.log(this.playlistIndex);
     },
+    IntroHome: function () {
+
+      this.playerAnimStart = gsap.timeline({
+      delay: 0.2,
+      // repeat: 3
+      
+    });
+
+   
+    this.playerAnimStart.to(this.$refs.playerAnim, {opacity: 1,   duration: 4, ease: "expo"});
+    
+    
+    
+   },
+
+
+    
 /* afspil specefikke sange
     play1() {
       this.playlist[0].play();
@@ -257,6 +280,7 @@ export default {
   mounted() {
     //this.animationGSAP();
     this.howlerInit();
+    this.IntroHome();
   },
 };
 </script>
@@ -285,6 +309,7 @@ z-index: 10;
  background-color: #0C0C0C;
   border: 1px solid #D03A3B;
   border-bottom: none;
+  opacity: 0;
 }
 .player-small .player-left {
     display: flex;

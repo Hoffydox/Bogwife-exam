@@ -12,6 +12,7 @@
             <h2>{{page.article1.header}}</h2>
             <p><strong>{{page.article1.text1}}</strong></p>
             <p>{{page.article1.text2}}</p>
+            <button class="readBtn buyBtn">Read More</button>
           </div>
           
         </div>
@@ -216,6 +217,11 @@ background-size: 100vw 100%;
   margin-left: 55px;
 }
 
+.readBtn {
+  margin-left: 0;
+  
+}
+
 .greyAlbum {
   color: #979797;
   font-size: 12px;
@@ -225,8 +231,8 @@ background-size: 100vw 100%;
 .album-tracks {
   width: 391px;
   height: 593px;
-  background-color: #0C0C0C;
-  opacity: 95%;
+  background-color: #0c0c0cec;
+  
 
   position: absolute;
   top: 15vh;
@@ -292,8 +298,8 @@ background-size: 100 100;
  .album-tracks {
   width: 391px;
   height: 593px;
-  background-color: #0C0C0C;
-  opacity: 100%;
+  background-color: #0c0c0c;
+ 
 
   position: relative;
   top: 0;
@@ -313,21 +319,10 @@ background-size: 100 100;
   top: 0;
   height: 533px
   }
+
 .album-tracks {
   width: 100%;
   height: 693px;
-  background-color: #0C0C0C;
-  opacity: 100%;
-
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-
-/*
-  top: 0;
-  left: -130px;
-  */
 }
 
 
@@ -353,18 +348,6 @@ p {
 .album-tracks {
   width: 100%;
   height: 533px;
-  background-color: #0C0C0C;
-  opacity: 100%;
-
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-
-/*
-  top: 0;
-  left: -130px;
-  */
 }
 
 

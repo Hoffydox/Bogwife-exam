@@ -175,6 +175,8 @@ body {
    background-color: #0C0C0C;
 }
 
+
+
 li {
   list-style: none;
 }
@@ -222,6 +224,8 @@ a:hover {
 a:visited {
   border: none;
 }
+
+
 
 nav {
   background-color: rgba(0, 0, 0, 0.342);
@@ -281,6 +285,10 @@ nav li a:hover {
   
   
   
+}
+
+a.router-link-exact-active.router-link-active {
+  color: #D03A3B;
 }
 
 .HeroImages-Container {

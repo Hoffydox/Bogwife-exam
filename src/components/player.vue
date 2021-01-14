@@ -104,7 +104,7 @@ export default {
       playlistIndex: 0,
 
       volume: 0.5,
-      volumeInput: 50,
+      volumeInput: 20,
 
         timeline: null,
       playerAnimStart: null,

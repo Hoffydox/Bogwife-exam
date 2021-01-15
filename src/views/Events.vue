@@ -102,6 +102,14 @@ max-width: 250px;
     font-size: 18px;
 }
 
+  .ticketBtn:active {
+    border: 3px solid #D03A3B;
+    
+}
+
+
+
+
 @media screen and (max-width: 590px) {
   .event-middle {
   min-width: 150px;

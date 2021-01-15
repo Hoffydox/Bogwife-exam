@@ -35,8 +35,8 @@
           <li class="track" v-for="track in page.tracks" :key="track.id" :id="track.id">
             <div class="track-wrapper">
               <div class="left">
-                <p>{{track.id}}</p> 
-                <p><font-awesome-icon :icon="[ 'far', 'play-circle' ]" class="play-circle" /></p> 
+                <p>{{track.id}}</p>                                                       
+                <p><font-awesome-icon :icon="[ 'far', 'play-circle' ]" class="play-circle" @click="playSelectedSong(track.id)" /></p> 
                 <!-- <p><font-awesome-icon :icon="[ 'far', 'pause-circle' ]" class="play-circle" v-on:click="startMusic"  /></p> -->
                 <p>{{track.name}}</p> 
               </div>
@@ -48,7 +48,8 @@
            
           </li>
           <div class="album-buttom">
-  <button class="buyBtn">Buy Album</button>
+             <router-link to="/Store"> <button class="buyBtn">Buy Album</button> </router-link>
+
           <p class="greyAlbum">
            
                Recorded and mixed by Jacob Bredahl at 
@@ -89,6 +90,17 @@ export default {
     }
   },
  methods: {
+   playSelectedSong: function (songId) {
+// call app.vue
+songId = songId -1;
+
+console.log("Home here with songId: " + songId);
+this.$parent.callPlayerSelectedSong(songId);
+
+    
+// this.$emit('callPlayerSelectedSong');
+   },
+   
    IntroHome: function () {
 
       this.timeline = gsap.timeline({
@@ -267,8 +279,12 @@ background-size: 100vw 100%;
 
 
 .play-circle {
-  
+  margin-top: -4px;
   font-size: 30px
+}
+
+.play-circle:hover {
+  color: #D03A3B;
 }
 
 @media screen and (max-width: 1350px) {
@@ -340,7 +356,7 @@ p {
   flex-wrap: wrap;
 }
 
-.buyBtn, .greyAlbum {
+ .greyAlbum {
   margin: 0 10px ;
   width: 45%;
 }
@@ -359,13 +375,10 @@ p {
     font-size: 8px;
   }
 
-.buyBtn  {
-  width: 30%;
-  font-size: 16px;
-}
+
 
  .greyAlbum {
-  width: 55%;
+  width: 40%;
 }
   p {
     margin-bottom: 10px;

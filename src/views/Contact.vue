@@ -32,10 +32,19 @@
             <p>SEND E-MAIL TO BOOKING:<br>BOOK@BOGWIFE.COM</p>
             <h2>Connect with Bogwife</h2>
             <div class="soMeIcons">
-              <font-awesome-icon :icon="[ 'fab', 'facebook' ]" class="soMeIcon" />
-              <font-awesome-icon :icon="[ 'fab', 'instagram' ]" class="soMeIcon" />
-              <font-awesome-icon :icon="[ 'fab', 'youtube' ]" class="soMeIcon" />
-              <font-awesome-icon :icon="[ 'fab', 'spotify' ]" class="soMeIcon" />
+              <a href="https://www.facebook.com/Bogwife/" target="_blank" alt="Bogwife Facebook page"><font-awesome-icon :icon="[ 'fab', 'facebook' ]" class="soMeIcon" /></a>
+                    <a href="https://www.instagram.com/bogwifeband/" target="_blank" alt="Bogwife Instagram page">
+                        <font-awesome-icon :icon="[ 'fab', 'instagram' ]" class="soMeIcon" />
+                        
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCSy4HT0xHmMRRUL0339HJgA" target="_blank" alt="Bogwife Youtube Channel">
+                        <font-awesome-icon :icon="[ 'fab', 'youtube' ]" class="soMeIcon" />
+                        
+                    </a>
+                    <a href="https://open.spotify.com/artist/28NHn1GKLZn3IryyzSDDJl?si=39lS3Ib-TQ6QB6WrMckXQA" target="_blank" alt="Bogwife Spotify page">
+                        <font-awesome-icon :icon="[ 'fab', 'spotify' ]" class="soMeIcon" />
+                        
+                    </a>
             </div>
           </div>
         </div>
@@ -117,6 +126,9 @@ width: 483px;
     color: #f5f5f5;
     font-size: 18px;
 }
+.submitBtn:active {
+    border: 3px solid #D03A3B;
+}
 
 .infoContainer {
   width: 272px;
@@ -127,10 +139,18 @@ width: 483px;
   flex-wrap: wrap;
 }
 
-.soMeIcon {
+.soMeIcons a {
   color: white;
   font-size: 34px;
   margin: 0 auto;
+}
+
+.soMeIcon {
+  
+}
+
+.soMeIcon:hover {
+  color: #D03A3B;
 }
 
 @media screen and (max-width: 1500px) {

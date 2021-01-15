@@ -7,7 +7,7 @@
                 <h2>{{ product.title }}</h2>
                 <p class="noMargin">{{ product.description }}</p>
                 <a class="artist-link" href="https://www.instagram.com/grace_xiii/?hl=da" target="_blank">{{ product.artwork }}</a>
-                <h2>{{ product.price }}</h2>
+                <h2>{{ product.price }} &euro;</h2>
                 <p class="greyP">{{ product.shipping }}</p>
                 <form class="options-container">
                 <div class="sizes" v-if="product.category == 'AP'" > <!-- 4 -6 produkt skal ikke have dette element.
@@ -247,6 +247,10 @@ display: flex;
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+.buyBtn:active {
+  border: 3px solid #D03A3B;
 }
 
 .artist-link {

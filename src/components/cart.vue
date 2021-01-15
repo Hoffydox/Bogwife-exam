@@ -167,4 +167,8 @@ export default {
     bottom: 0;
 }
 
+.checkOutBtn:active {
+  border: 3px solid #D03A3B;
+}
+
 </style>

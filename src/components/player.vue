@@ -23,7 +23,7 @@
       <div v-if="player == 'start'" class="player-big">
         <p class="songlength">{{ songList[playlistIndex].duration }}</p>
         <div class="seeker">
-            <input v-model="seekerInput" type="range" min="0" max="100" class="seekerInput" id="myRange">
+            <input  type="range" min="0" max="100" class="seekerInput" id="myRange">
         </div>
 
         
@@ -103,10 +103,12 @@ export default {
       playlist: [],
       playlistIndex: 0,
 
+      playlistIndexFromApp: 0,
+
       volume: 0.5,
       volumeInput: 20,
 
-        timeline: null,
+      timeline: null,
       playerAnimStart: null,
       
     };
@@ -116,6 +118,12 @@ export default {
       return this.sound.volume(this.volumeInput);
     },
   },
+  props: ['IndexFromApp'],
+  watch: { 
+    IndexFromApp: function() {
+      this.playSelectedSong(this.IndexFromApp);
+    }
+},
   methods: {
      /* expands: function () {
           this.expand = !this.expand;
@@ -199,6 +207,7 @@ export default {
       if (this.playlistIndex >= 4) {
         this.playlistIndex = 0;
         this.songList[this.playlistIndex];
+        this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
         this.playlist[this.playlistIndex].play();
         this.player = "start";
         this.mute = "unmute";
@@ -206,6 +215,7 @@ export default {
       } else {
         this.playlist[this.playlistIndex++];
         this.songList[this.playlistIndex];
+        this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
         this.playlist[this.playlistIndex].play();
         this.player = "start";
         this.mute = "unmute";
@@ -221,6 +231,7 @@ export default {
       if (this.playlistIndex <= 0) {
         this.playlistIndex = 4;
         this.songList[this.playlistIndex];
+        this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
         this.playlist[this.playlistIndex].play();
         this.player = "start";
         this.mute = "unmute";
@@ -228,6 +239,7 @@ export default {
       } else {
         this.playlist[this.playlistIndex--];
         this.songList[this.playlistIndex];
+        this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
         this.playlist[this.playlistIndex].play();
         this.player = "start";
         this.mute = "unmute";
@@ -237,6 +249,20 @@ export default {
       console.log("next");
       console.log(this.playlistIndex);
     },
+     playSelectedSong: function (SongId) {
+      // call app.vue
+      
+      this.playlist[this.playlistIndex].stop();
+      
+      console.log("Player here with songId: " + SongId);
+      this.playlistIndex = SongId;
+      this.player = "start";
+      this.playlist[this.playlistIndex].volume(this.volumeInput / 100);
+      this.playlist[this.playlistIndex].play();
+      this.isActive = true;
+      
+
+   },
     IntroHome: function () {
 
       this.playerAnimStart = gsap.timeline({
@@ -309,6 +335,7 @@ z-index: 10;
  background-color: #0C0C0C;
   border: 1px solid #D03A3B;
   border-bottom: none;
+  border-left: none;
   opacity: 0;
 }
 .player-small .player-left {

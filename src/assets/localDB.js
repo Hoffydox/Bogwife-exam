@@ -144,7 +144,7 @@ export default [
                 "pic": "cassette.jpg",
                 "title": "Halls of Rebirth Cassette",
                 "description": "Casette produced by Olde Magick Records. Limited to 20 copies.",
-                "price": "20",
+                "price": "7",
                 "shipping": "Ships within 15 days",
                 "category": "MU",
                 "sizes": [],

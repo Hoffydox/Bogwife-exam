@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- Alle billeder og alt musik er eget af Bogwife - 2021.-->
+    <!-- Alle billeder og alt musik er eget af Bogwife - 2021 -->
     <nav ref="navAnim">
       <div class="navLeft">
         <router-link to="/">
@@ -20,7 +20,7 @@
     <!-- <img class="HeroImages" src="./assets/img/AboutHero.png"> -->
 
     <router-view />
-    <player />
+    <player :IndexFromApp="playlistIndexFromApp"/>
     <footerComp />
     <!-- Alle billeder og alt musik er eget af Bogwife - 2021.-->
   </div>
@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       navTimeline: null,
+      playlistIndexFromApp: 0,
     }
   },
   computed: {
@@ -55,6 +56,12 @@ export default {
     
   },
   methods: {
+    callPlayerSelectedSong: function (SongId) {
+      // calls player function
+      console.log("parent here with songId: " + SongId);
+      this.playlistIndexFromApp = SongId;
+
+    },
     navAnimation: function () {
       
 
@@ -375,6 +382,10 @@ a.router-link-exact-active.router-link-active {
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+.buyBtn:active {
+  border: 3px solid #D03A3B;
 }
 
 @media screen and (max-width: 1000px) { 

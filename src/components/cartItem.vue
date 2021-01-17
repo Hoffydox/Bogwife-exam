@@ -73,7 +73,7 @@ export default {
     
 }
 .rightCart {
-    width: 120px;
+    
     
 }
 

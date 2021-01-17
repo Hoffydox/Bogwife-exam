@@ -43,8 +43,9 @@
         <img src="../assets/img/aboutimg1.jpg" />
         <img src="../assets/img/aboutimg2.jpg" />
       </div>
-
+   
       <div class="news-container">
+       <div class="news-header"> <h1>{{ page.article4.header }}</h1></div>
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post1.header }}</h2>
@@ -98,7 +99,7 @@ export default {
 #about #about-hero-container {
   /* Placeholder for animations viduet */
 
-  width: 100vw;
+
   background-color: #0c0c0c;
   /* background-image: url("../assets/img/introimg.png"); */
   background-repeat: no-repeat;
@@ -130,6 +131,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: space-between;
 }
 
 .textSpacer {
@@ -142,10 +144,15 @@ export default {
     width: 100%;
 }
 
+.news-container .news-header {
+  width: 100%;
+}
+
 .news-container .news-feed {
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 0 10px;
-  /* background-color: rgb(255, 217, 217); */
+  background-color: rgb(255, 217, 217); */
+
   width: 370px;
   height: 786px;
 }

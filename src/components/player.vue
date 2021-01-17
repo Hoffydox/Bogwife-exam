@@ -37,7 +37,7 @@
     </div>
     <div v-if="player == 'start'" class="player-spotify">
         <h2>Listen on Spotify:</h2>
-      <font-awesome-icon class="spotify" :icon="[ 'fab', 'spotify' ]" />
+     <a href="https://open.spotify.com/artist/28NHn1GKLZn3IryyzSDDJl?si=39lS3Ib-TQ6QB6WrMckXQA" target="_blank"><font-awesome-icon class="spotify" :icon="[ 'fab', 'spotify' ]" /></a> 
     </div>
     </div>
   </div>
@@ -369,6 +369,10 @@ padding: 22px 10px 0 0 ;
 width: 34px;
 }
 
+.back-next-icon, .play-pause-icon,.seeker .seekerInput, .volumeInput, .mute-unmute-icon:hover {
+  cursor: pointer;
+}
+
 .player-big {
   
   display: flex;
@@ -388,12 +392,14 @@ width: 34px;
 
 .songlength {
     margin: 27px 5px 0 10px;
+    cursor: default;
 }
 
 .seeker {
   
   width: 330px;
   margin-right: 20px;
+  
   
 }
 
@@ -403,6 +409,7 @@ padding: 32px 0;
   width: 330px;
   color: #2D2D2D;
   background-color: #2D2D2D;
+  
   
 }
 

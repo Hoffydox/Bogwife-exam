@@ -1,7 +1,8 @@
 <template>
   <div class="cart">
     <div class="cart-wrapper">
-      <font-awesome-icon
+      <div class="cartCircle" ref="circleAnim"></div>
+      <font-awesome-icon ref="cartAnim"
         icon="shopping-cart"
         class="cart-icon"
         v-on:click="toggleCart"
@@ -9,7 +10,7 @@
       <div v-if="cartShow" class="cartFull">
         <div class="headerCart">
           <div class="leftCart">
-            <font-awesome-icon
+            <font-awesome-icon ref="cartInside"
               icon="shopping-cart"
               class="cart-icon"
               v-on:click="toggleCart"
@@ -43,19 +44,47 @@
 
 <script>
 import cartItem from "../components/cartItem.vue";
+import gsap from "gsap";
 
 export default {
   name: "cartComponent",
-  
+  props: ["cartWatch"],
     data() {
         return {
             cartShow: false,
+            cartWatchTick: false,
+            cartTimeline: null,
         }
     },
+    watch: { 
+    cartWatch: function() {
+      if (this.cartWatch == "true") {
+        this.cartAnimation();
+      }
+      console.log("this.cartAnimation not true")
+    }
+},
     methods: {
         toggleCart: function () {
             this.cartShow = !this.cartShow;
-        }
+        },
+        cartAnimation: function () {
+      
+
+      this.cartTimeline = gsap.timeline({
+      delay: 0,
+      // repeat: 3
+      
+    });
+
+    this.cartTimeline.to(this.$refs.circleAnim, {scale: 7, opacity: 0,  duration: 1.2, ease: "expo.out"});
+    this.cartTimeline.to(this.$refs.cartAnim, {color: "#D03A3B",  duration: 1, ease: "expo"}, "-=0.8");
+    
+    
+    
+    this.cartWatchTick = "false";
+    console.log(this.cartWatchTick);
+   },
     },
   computed: {
     cart: function () {
@@ -88,7 +117,23 @@ export default {
     
 }
 
+.cartCircle {
+width: 7px; /* width: 70px; */
+height: 7px; /* height: 70px */
+border: 4px solid gold;
+border-radius: 100px;
+position: absolute;
+top: 12px;
+left: 18px;
+opacity: 1;
+scale: 1;
+z-index: -1;
 
+}
+
+.times {
+  margin-right: 20px;
+}
 
 .cart .cart-icon, .times {
     color: #f5f5f5;
@@ -106,18 +151,14 @@ export default {
     position: relative;
     top: -52px;
     z-index: 4;
-    background-color: #0C0C0C;
- 
- 
-    
-    
-    
+    background-color: #0C0C0C; 
 }
 
 .headerCart {
     height: 100px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     
 }
 
@@ -125,6 +166,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 30px;
+    
 }
 
 
@@ -132,14 +174,21 @@ export default {
     width: 72px;
     
 }
+
+.leftCart p {
+    margin-left: 20px;
+    
+}
 .middleCart {
     width: 285px;
     
 }
 .rightCart {
-    width: 120px;
+    
     
 }
+
+
 
 .cartProductInfo {
     display: flex;

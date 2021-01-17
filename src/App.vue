@@ -179,8 +179,8 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-family: Roboto;
+ 
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   
 }
 
@@ -216,6 +216,7 @@ li {
 h1, h2, h3, h4, h5, p, a {
    color: #F5F5F5;
    text-decoration: none;
+   cursor: default;
 }
 
 h1 {
@@ -251,6 +252,7 @@ p {
 
 a:hover {
   color: #D03A3B;
+  cursor: pointer;
 }
 
 a:visited {
@@ -267,7 +269,7 @@ nav {
   flex-wrap: wrap;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 2;
   opacity: 0;
 }
@@ -314,7 +316,8 @@ nav .navRight a {
 }
 
 nav li a:hover {
-  text-decoration: underline #D03A3B;
+  /* text-decoration: underline #D03A3B; */
+  color:  #D03A3B;
   
   
   

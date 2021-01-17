@@ -19,7 +19,7 @@
                     </div>
                         <div class="quanitityArea">
                             <p class="greyP">
-                                Quanitity: 
+                                Quantity: 
                             </p>
                             <div class="quantityBtn">
                                 <div class="left"><p class="counter"> {{ count }} </p></div>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     
-                    <button class="buyBtn" type="button" @click="addToCart">
+                    <button class="buyBtn" type="button" @click="checkIfNull">
                         Buy
                     </button>
                 </form>
@@ -49,6 +49,14 @@ export default {
       }
   },
     methods: {
+        checkIfNull() {
+            if (this.sizeSelected == 'null' && this.product.category == 'AP') {
+                alert("Please select a size");
+            } else {
+                this.addToCart();
+            }
+            console.log(this.sizeSelected);
+        },
        
         addToCart() {
             // create a cartItem (aka. payload)
@@ -77,8 +85,8 @@ export default {
                cartId: cartId,
            }
            console.log(cartItem);
-
-      this.$store.dispatch("addToCart", cartItem); // check content i store.js --- Det skal være cartItem som param
+        this.$parent.callCartIcon(); // Calling animation in store.vue
+        this.$store.dispatch("addToCart", cartItem); // check content i store.js --- Det skal være cartItem som param
     }
     },
   computed: {
@@ -165,9 +173,11 @@ export default {
     display: none;
 }
 
+
+
 .size label {
     display: inline-block;
-    border: 1px solid #D03A3B;
+    border: 2px solid #D03A3B;
     width: 30px;
     height: 16px;
     text-align: center;
@@ -177,6 +187,11 @@ export default {
 
 .size label:hover {
     color: #F5F5F5;
+    cursor: pointer;
+}
+
+.size label:active {
+    border: 3px solid #D03A3B;
 }
 
 .size input:checked + label {
@@ -189,6 +204,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     color: #F5F5F5;
+    cursor: default;
 }
 
 .quanitityArea p {
@@ -202,6 +218,9 @@ display: flex;
      height: 32px;
 }
 
+
+
+
 .quanitityArea .quantityBtn .left{
     width: 36px;
     
@@ -213,6 +232,9 @@ display: flex;
     width: 22px;
     height: 32px;
     background-color: darkcyan;
+}
+.quanitityArea .quantityBtn .right .quantityUp:hover, .quanitityArea .quantityBtn .right .quantityDown:hover{
+    cursor: pointer;
 }
 
 .quantityUp, .quantityDown {
@@ -243,10 +265,14 @@ display: flex;
     border-radius: 7px;
     width: 146px;
     height: 45px;
-    margin: 0 87px 30px 0;
+    margin: 0 100px 30px 0;
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+.buyBtn:hover {
+  cursor: pointer;
 }
 
 .buyBtn:active {

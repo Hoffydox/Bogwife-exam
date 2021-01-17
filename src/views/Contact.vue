@@ -14,11 +14,11 @@
         <div class="left">
           <form action="" id="contactForm">
             
-            <input type="text" id="contactName" class="contact-input-styles" name="name" placeholder="Name...">
+            <input type="text" id="contactName" class="contact-input-styles" name="name" placeholder="Name">
             <input type="text" id="contactPhone" class="contact-input-styles" name="phone" placeholder="Phone">
             <input type="text" id="contactEmail" class="contact-input-styles" name="email" placeholder="E-mail">
-            <input type="text" id="contactMessage" class="contact-input-styles" name="message" placeholder="Your Message Here...">
-            <input type="submit" class="submitBtn" value="Submit"> <p>Your Message Has Been Sent! <br>
+            <input type="textarea" id="contactMessage" class="contact-input-styles" name="message" placeholder="Your Message Here...">
+            <input type="button" class="submitBtn" value="Submit" @click="SendMessage"> <p v-if="sent == 'sent'">Your Message Has Been Sent! <br>
                                                     We Will Get Back To You Soon. </p>
             
           </form>
@@ -26,10 +26,10 @@
         </div>
         <div class="right">
           <div class="infoContainer">
-            <h2>BOOK BUSINESS</h2>
-            <p>SEND E-MAIL TO MANAGER:<br>MANAGER@BOGWIFE.COM</p>
-            <p>SEND E-MAIL TO PRESS:<br>PRESS@BOGWIFE.COM</p>
-            <p>SEND E-MAIL TO BOOKING:<br>BOOK@BOGWIFE.COM</p>
+            <h2>BOOK BUSINESS</h2><a href="mailto:"></a>
+            <p>SEND E-MAIL TO MANAGER:<br><a href="mailto:MANAGER@BOGWIFE.COM">MANAGER@BOGWIFE.COM</a></p>
+            <p>SEND E-MAIL TO PRESS:<br><a href="mailto:PRESS@BOGWIFE.COM">PRESS@BOGWIFE.COM</a></p>
+            <p>SEND E-MAIL TO BOOKING:<br><a href="mailto:BOOK@BOGWIFE.COM">BOOK@BOGWIFE.COM</a></p>
             <h2>Connect with Bogwife</h2>
             <div class="soMeIcons">
               <a href="https://www.facebook.com/Bogwife/" target="_blank" alt="Bogwife Facebook page"><font-awesome-icon :icon="[ 'fab', 'facebook' ]" class="soMeIcon" /></a>
@@ -56,6 +56,11 @@
 <script>
 export default {
   name: "Contact",
+  data() {
+    return {
+      sent: "notSent",
+    }
+  },
   computed: {
     page: function () {
       const pageObject = this.$store.getters.getPageByName(this.$route.name);
@@ -65,6 +70,12 @@ export default {
       return pageObject;
     },
   },
+  methods: {
+    SendMessage: function () {
+      
+      this.sent = "sent"
+    }
+  }
 };
 </script>
 
@@ -72,7 +83,7 @@ export default {
 #contact #contact-hero-container {
   /* Placeholder for animations viduet */
 
-  width: 100vw;
+
   background-color: #0c0c0c;
   /* background-image: url("../assets/img/introimg.png"); */
   background-repeat: no-repeat;
@@ -126,6 +137,11 @@ width: 483px;
     color: #f5f5f5;
     font-size: 18px;
 }
+
+.submitBtn:hover {
+    cursor: pointer;
+}
+
 .submitBtn:active {
     border: 3px solid #D03A3B;
 }

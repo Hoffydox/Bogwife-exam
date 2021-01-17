@@ -6,7 +6,7 @@
     <div class="main-container">
 
         <h1>{{ page.name }}</h1>
-        <cartComponent/>
+        <cartComponent :cartWatch="cartWatchTick"/>
 
         <div class="product-container">
             <div class="product-category">
@@ -38,10 +38,16 @@ export default {
       return {
           /* Hvad skal jeg gøre her gery???? */
           count: 1,
-          
+          cartWatchTick: false,
       }
   },
-    
+  methods: {
+      callCartIcon: function () {
+          console.log("anim in store");
+          this.cartWatchTick = "true";
+           console.log(this.cartWatchTick);
+      }
+  },
   computed: {
     page: function () {
       const pageObject = this.$store.getters.getPageByName(this.$route.name);
@@ -75,9 +81,9 @@ export default {
 
 #store #store-hero-container {
 
-/* Placeholder for animations viduet */
 
-width: 100vw;
+
+
 background-color: #0C0C0C;
  /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;

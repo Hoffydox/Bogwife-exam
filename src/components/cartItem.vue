@@ -6,8 +6,8 @@
     <div class="middleCart">
       <div class="cartProductInfo">
         <p class="fullWidth"> {{ cartItem.product.title }} </p>
-        <div class="size">
-          <p>Size: {{ cartItem.size }}</p>
+        <div class="size"  v-if="cartItem.product.category == 'AP'">
+          <p >Size: {{ cartItem.size }}</p>
         </div>
         <div class="quantityArea">
           <p>Quantity: {{ cartItem.quantity }}</p> <!-- rigtigt? -->
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="rightCart">
-      <p>REMOVE</p> <!-- comit a mutation to remove with: filter everything that is not the excact match - use cartId-->
+      <p class="remove" @click="removeItem">REMOVE</p> <!-- comit a mutation to remove with: filter everything that is not the excact match - use cartId-->
     </div>
   </div>
 </template>
@@ -40,6 +40,11 @@
 export default {
   name: "cartItem",
   prop: ["cartItemProp"],
+  methods: {
+    removeItem: function () {
+      console.log("Remove Item");
+    }
+  },
   computed: {
     cartItem: function () {
         console.log("cartItem updated");
@@ -70,6 +75,11 @@ export default {
 .rightCart {
     width: 120px;
     
+}
+
+.remove:hover {
+color: #D03A3B;
+cursor: pointer;
 }
 
 .cartProductInfo {
@@ -104,7 +114,7 @@ flex-wrap: wrap;
 
 .gift {
   margin: 10px 0;
-  width: 50%;
+  width: 100%;
 }
 
 .gift input{

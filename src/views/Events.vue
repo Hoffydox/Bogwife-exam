@@ -56,7 +56,7 @@ export default {
 
 /* Placeholder for animations viduet */
 
-width: 100vw;
+
 background-color: #0C0C0C;
  /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;
@@ -100,6 +100,11 @@ max-width: 250px;
     background-color: #0C0C0C;
     color: #f5f5f5;
     font-size: 18px;
+}
+
+.ticketBtn:hover {
+    cursor: pointer;
+    
 }
 
   .ticketBtn:active {

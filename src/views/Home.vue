@@ -154,8 +154,13 @@ this.$parent.callPlayerSelectedSong(songId);
 
 
 .redOneBox {
-  height: 100%;
+  /* height: 100%;
   width: 100%;
+  */
+
+   height: 70%;
+  width: 60%;
+
   background-image: url("../assets/img/Layer0.png");
   background-repeat: no-repeat;
 background-size: 36vw auto;
@@ -169,8 +174,8 @@ opacity: 0;
 #home #home-hero-container {
 
 /* Placeholder for animations viduet */
-/* height: 100vh; nye ændringer */ 
-width: 100vw;
+/* height: 100vh; nye ændringer 
+width: 100vw;*/ 
 
  /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;
@@ -207,7 +212,7 @@ background-size: 100vw auto;
 .album-container {
   padding: 0 14.45%;
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
 
  /* background-image: url("../assets/img/introimg.png"); */
 background-repeat: no-repeat;
@@ -224,6 +229,10 @@ background-size: 100vw 100%;
   left: 5%;
   background-repeat: no-repeat;
   background-size: 90%;
+}
+
+.buyBtn:hover {
+  cursor: pointer;
 }
 
 .album-container .album-title, .buyBtn, .greyAlbum {
@@ -285,6 +294,7 @@ background-size: 100vw 100%;
 
 .play-circle:hover {
   color: #D03A3B;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1350px) {
@@ -292,7 +302,7 @@ background-size: 100vw 100%;
 .album-container {
   padding: 0;
   height: 150vh;
-  width: 100vw;
+  /* width: 100vw; */
 background-image: none;
 
 background-repeat: no-repeat;

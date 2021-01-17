@@ -135,6 +135,11 @@ z-index: -1;
   margin-right: 20px;
 }
 
+.times:hover {
+  color:#D03A3B;
+  cursor: pointer;
+}
+
 .cart .cart-icon, .times {
     color: #f5f5f5;
     font-size: 41px;

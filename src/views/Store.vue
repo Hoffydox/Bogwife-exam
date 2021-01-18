@@ -36,7 +36,7 @@ export default {
   name: "Store",
   data() {
       return {
-          /* Hvad skal jeg gøre her gery???? */
+         
           count: 1,
           cartWatchTick: false,
       }
@@ -229,6 +229,30 @@ display: flex;
     display: inline-block;
     margin: 0 0 25px;
     text-decoration: underline  #D03A3B ;
+}
+
+@media screen and (max-width: 1000px) { 
+  .main-container .main-left, .main-container  {
+    margin: 30px auto;
+  }
+}
+
+@media screen and (max-width: 590px) {
+ 
+
+#store #store-hero-container {
+    background-size: 0;
+}
+}
+
+@media screen and (max-width: 530px) {
+
+   #store .main-container {
+    padding: 0 5%;
+}
+
+ 
+
 }
 
 </style>

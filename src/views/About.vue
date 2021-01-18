@@ -167,13 +167,28 @@ export default {
   margin: 30px auto;
   padding-bottom: 0;
 }
-}
-
-@media screen and (max-width: 1000px) { 
 
 .main-right {
   width: 85%;
   
+}
+}
+
+
+@media screen and (max-width: 700px) { 
+
+.news-container .news-feed{
+    height: 630px;
+}
+}
+
+
+
+@media screen and (max-width: 590px) {
+ 
+
+#about #about-hero-container {
+    background-size: 0;
 }
 }
 </style>

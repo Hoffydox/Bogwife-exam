@@ -293,4 +293,30 @@ display: flex;
     text-decoration: underline  #D03A3B ;
 }
 
+
+@media screen and (max-width: 530px) {
+
+   #store .main-container {
+    padding: 0 10px;
+   
+}
+    .quanitityArea {
+        margin: 0 0 5px;
+    }
+
+    .storePic {
+    width: 300px;
+    height: 234px;
+}
+
+.sizes {
+    margin-bottom: 20px;
+}
+
+.store-product {
+    width: 300px;
+    
+}
+}
+
 </style>

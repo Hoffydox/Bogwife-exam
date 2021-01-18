@@ -463,5 +463,49 @@ button {
     justify-content: space-between;
     
 }
+@media screen and (max-width: 1350px) { 
 
+.seeker {
+  width: 21vw;
+}
+.seeker .seekerInput {
+  width: 21vw;
+}
+
+.volumeInput {
+    width: 120px;
+}
+
+}
+
+
+@media screen and (max-width: 1099px) { 
+
+.player-spotify {
+  display: none;
+}
+
+.player-big {
+  margin: 0 20px 0 0;
+}
+
+}
+
+@media screen and (max-width: 770px) { 
+
+.seeker, .songlength {
+  display: none;
+}
+
+
+}
+
+@media screen and (max-width: 580px) { 
+
+#player {
+  display: none;
+}
+
+
+}
 </style>

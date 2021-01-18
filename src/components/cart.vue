@@ -123,7 +123,7 @@ height: 7px; /* height: 70px */
 border: 4px solid gold;
 border-radius: 100px;
 position: absolute;
-top: 12px;
+top: 10px;
 left: 18px;
 opacity: 1;
 scale: 1;
@@ -224,5 +224,16 @@ z-index: -1;
 .checkOutBtn:active {
   border: 3px solid #D03A3B;
 }
+
+@media screen and (max-width: 1000px) { 
+.cart {
+   
+    right: 20px;
+    top: 200px;
+  
+}
+
+}
+
 
 </style>

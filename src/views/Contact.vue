@@ -179,7 +179,26 @@ width: 483px;
   .main-container .contact-wrapper .left {
     margin: 0 30px 30px 0;
 }
+
+.main-container .main-left, .main-container  {
+  
+  margin: 30px auto;
+ 
 }
+}
+
+@media screen and (max-width: 600px) {
+  .main-container .contact-wrapper .left {
+    display: none;
+}
+
+#contact #contact-hero-container {
+    background-size: 0;
+}
+
+}
+
+
 
 
 </style>

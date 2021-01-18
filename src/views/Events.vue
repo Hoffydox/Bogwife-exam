@@ -111,14 +111,21 @@ max-width: 250px;
     border: 3px solid #D03A3B;
     
 }
-
-
+@media screen and (max-width: 1000px) { 
+  .main-container .main-left, .main-container  {
+    margin: 30px auto;
+  }
+}
 
 
 @media screen and (max-width: 590px) {
   .event-middle {
   min-width: 150px;
   text-align: left;
+}
+
+#events #events-hero-container {
+    background-size: 0;
 }
 }
 

@@ -87,6 +87,13 @@ export default {
     background-color: #f5f5f5;
 }
 
+@media screen and (max-width: 580px) {  
+    .player-room {
+    height: 0;
+    
+}
+}
+
 @media screen and (max-width: 810px) { 
 
 #footer .footer-container .footer-content {

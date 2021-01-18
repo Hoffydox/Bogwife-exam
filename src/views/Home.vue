@@ -355,8 +355,19 @@ background-size: 100 100;
 
 }
 
-@media screen and (max-width: 700px) { 
+@media screen and (max-width: 580px) { 
 
+.album-container {
+  display: none;
+}
+/*
+#home #home-hero-container {
+  background-size: 0;
+}
+.redOneBox {
+  display: none;
+}
+*/
 p {
   margin: 0px 0 20px;
 }

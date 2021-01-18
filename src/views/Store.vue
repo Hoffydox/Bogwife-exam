@@ -19,8 +19,6 @@
         </div>
         <product v-for="product in musics" :key="product.id" :productProp="product"/>
           
-
-          
         </div>
     </div>
     
@@ -80,8 +78,6 @@ export default {
 <style scoped>
 
 #store #store-hero-container {
-
-
 
 
 background-color: #0C0C0C;

@@ -32,16 +32,11 @@
             <p>{{ page.article3.text4 }}</p>
             </div>
           
-         
-
-         
-
-         
         </div>
       </div>
       <div class="main-right">
-        <img src="../assets/img/aboutimg1.jpg" />
-        <img src="../assets/img/aboutimg2.jpg" />
+        <img src="../assets/img/aboutimg1.jpg" alt="A mockshot of the band standing side by side in front of a forest"/>
+        <img src="../assets/img/aboutimg2.jpg" alt="The bassist and drummer playing at a gig" />
       </div>
    
       <div class="news-container">
@@ -49,7 +44,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post1.header }}</h2>
-            <img class="fullWidth" src="../assets/img/newsDoomChart.jpg" />
+            <img class="fullWidth" src="../assets/img/newsDoomChart.jpg" alt="Doom Charts poster saying: Doom Charts top 100 albums of 2020 " />
             <p>
               {{ page.article4.post1.text1 }}
               <a href="">{{ page.article4.post1.text2 }}</a>
@@ -59,7 +54,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post2.header }}</h2>
-            <img class="fullWidth" src="../assets/img/newsSpotifyArtist.jpg" />
+            <img class="fullWidth" src="../assets/img/newsSpotifyArtist.jpg" alt="spotify #2020ArtistWrapped" />
             <p>
               {{ page.article4.post2.text1 }}
             </p>
@@ -68,7 +63,7 @@
         <div class="news-feed">
           <div class="text-wrapper">
             <h2>{{ page.article4.post3.header }}</h2>
-            <img class="fullWidth" src="../assets/img/newsVinyler.jpg" />
+            <img class="fullWidth" src="../assets/img/newsVinyler.jpg" alt="bogwife vinyls presented on cardboard boxes" />
             <p>
               {{ page.article4.post3.text1 }}
             </p>

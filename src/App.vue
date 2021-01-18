@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <!-- Alle billeder og alt musik er eget af Bogwife - 2021 -->
+    <!-- Icons by Font Awesome fontawesome.com -->
     <nav ref="navAnim">
       <div class="navLeft">
         <router-link to="/">
-          <img id="LandingPageLogo" src="./assets/img/logo.png" alt="" />
+          <img id="LandingPageLogo" src="./assets/img/logo.png" alt="Bogwife Logo" />
         </router-link>
       </div>
 
@@ -192,6 +193,10 @@ body {
   margin: 0;
   background:  #f5f5f5;
  
+}
+
+*:focus { /* Stopper Chrome fra at sætte ring om knapper og andet */
+    outline:none;
 }
 
 #app {

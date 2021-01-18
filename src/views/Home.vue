@@ -18,7 +18,7 @@
           
         </div>
         <div class="main-right">
-          <img src="../assets/img/homeimg.jpg">
+          <img src="../assets/img/homeimg.jpg" alt="The band - Bogwife playing at a venue">
           
         </div>
       </div>
@@ -226,7 +226,7 @@ background-size: 100vw 100%;
 	
 	position: relative;
   top: 5%;
-  left: 5%;
+  left: 11%;
   background-repeat: no-repeat;
   background-size: 90%;
 }
